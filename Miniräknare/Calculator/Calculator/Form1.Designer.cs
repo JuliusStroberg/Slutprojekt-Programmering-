@@ -48,6 +48,23 @@
             this.buttonreturn = new System.Windows.Forms.Button();
             this.buttonclear = new System.Windows.Forms.Button();
             this.buttonEnter = new System.Windows.Forms.Button();
+            this.buttonMultiplikation = new System.Windows.Forms.Button();
+            this.buttonDivision = new System.Windows.Forms.Button();
+            this.buttonSubtraktion = new System.Windows.Forms.Button();
+            this.buttonAddition = new System.Windows.Forms.Button();
+            this.buttonRparentes = new System.Windows.Forms.Button();
+            this.buttonLparentes = new System.Windows.Forms.Button();
+            this.buttonLn = new System.Windows.Forms.Button();
+            this.buttonKvadrat2 = new System.Windows.Forms.Button();
+            this.buttonPi = new System.Windows.Forms.Button();
+            this.buttonRoten = new System.Windows.Forms.Button();
+            this.buttonSin = new System.Windows.Forms.Button();
+            this.buttonKvadratN = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.buttonTan = new System.Windows.Forms.Button();
+            this.buttonCos = new System.Windows.Forms.Button();
+            this.buttonLog = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,7 +233,7 @@
             this.buttonreturn.Name = "buttonreturn";
             this.buttonreturn.Size = new System.Drawing.Size(60, 45);
             this.buttonreturn.TabIndex = 13;
-            this.buttonreturn.Text = "<--";
+            this.buttonreturn.Text = "←";
             this.buttonreturn.UseVisualStyleBackColor = true;
             // 
             // buttonclear
@@ -239,12 +256,197 @@
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
             // 
+            // buttonMultiplikation
+            // 
+            this.buttonMultiplikation.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMultiplikation.Location = new System.Drawing.Point(349, 224);
+            this.buttonMultiplikation.Name = "buttonMultiplikation";
+            this.buttonMultiplikation.Size = new System.Drawing.Size(60, 43);
+            this.buttonMultiplikation.TabIndex = 19;
+            this.buttonMultiplikation.Text = "·";
+            this.buttonMultiplikation.UseVisualStyleBackColor = true;
+            // 
+            // buttonDivision
+            // 
+            this.buttonDivision.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDivision.Location = new System.Drawing.Point(349, 175);
+            this.buttonDivision.Name = "buttonDivision";
+            this.buttonDivision.Size = new System.Drawing.Size(60, 43);
+            this.buttonDivision.TabIndex = 18;
+            this.buttonDivision.Text = "÷";
+            this.buttonDivision.UseVisualStyleBackColor = true;
+            // 
+            // buttonSubtraktion
+            // 
+            this.buttonSubtraktion.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubtraktion.Location = new System.Drawing.Point(349, 273);
+            this.buttonSubtraktion.Name = "buttonSubtraktion";
+            this.buttonSubtraktion.Size = new System.Drawing.Size(60, 43);
+            this.buttonSubtraktion.TabIndex = 17;
+            this.buttonSubtraktion.Text = "-";
+            this.buttonSubtraktion.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddition
+            // 
+            this.buttonAddition.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddition.Location = new System.Drawing.Point(349, 322);
+            this.buttonAddition.Name = "buttonAddition";
+            this.buttonAddition.Size = new System.Drawing.Size(60, 43);
+            this.buttonAddition.TabIndex = 16;
+            this.buttonAddition.Text = "+";
+            this.buttonAddition.UseVisualStyleBackColor = true;
+            // 
+            // buttonRparentes
+            // 
+            this.buttonRparentes.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRparentes.Location = new System.Drawing.Point(217, 122);
+            this.buttonRparentes.Name = "buttonRparentes";
+            this.buttonRparentes.Size = new System.Drawing.Size(60, 45);
+            this.buttonRparentes.TabIndex = 21;
+            this.buttonRparentes.Text = ")";
+            this.buttonRparentes.UseVisualStyleBackColor = true;
+            // 
+            // buttonLparentes
+            // 
+            this.buttonLparentes.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLparentes.Location = new System.Drawing.Point(151, 122);
+            this.buttonLparentes.Name = "buttonLparentes";
+            this.buttonLparentes.Size = new System.Drawing.Size(60, 45);
+            this.buttonLparentes.TabIndex = 20;
+            this.buttonLparentes.Text = "(";
+            this.buttonLparentes.UseVisualStyleBackColor = true;
+            // 
+            // buttonLn
+            // 
+            this.buttonLn.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLn.Location = new System.Drawing.Point(469, 346);
+            this.buttonLn.Name = "buttonLn";
+            this.buttonLn.Size = new System.Drawing.Size(50, 50);
+            this.buttonLn.TabIndex = 24;
+            this.buttonLn.Text = "Ln";
+            this.buttonLn.UseVisualStyleBackColor = true;
+            // 
+            // buttonKvadrat2
+            // 
+            this.buttonKvadrat2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKvadrat2.Location = new System.Drawing.Point(469, 122);
+            this.buttonKvadrat2.Name = "buttonKvadrat2";
+            this.buttonKvadrat2.Size = new System.Drawing.Size(50, 50);
+            this.buttonKvadrat2.TabIndex = 23;
+            this.buttonKvadrat2.Text = "a^2";
+            this.buttonKvadrat2.UseVisualStyleBackColor = true;
+            // 
+            // buttonPi
+            // 
+            this.buttonPi.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPi.Location = new System.Drawing.Point(469, 178);
+            this.buttonPi.Name = "buttonPi";
+            this.buttonPi.Size = new System.Drawing.Size(50, 50);
+            this.buttonPi.TabIndex = 22;
+            this.buttonPi.Text = "π";
+            this.buttonPi.UseVisualStyleBackColor = true;
+            // 
+            // buttonRoten
+            // 
+            this.buttonRoten.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRoten.Location = new System.Drawing.Point(469, 290);
+            this.buttonRoten.Name = "buttonRoten";
+            this.buttonRoten.Size = new System.Drawing.Size(50, 50);
+            this.buttonRoten.TabIndex = 27;
+            this.buttonRoten.Text = "√";
+            this.buttonRoten.UseVisualStyleBackColor = true;
+            // 
+            // buttonSin
+            // 
+            this.buttonSin.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSin.Location = new System.Drawing.Point(525, 178);
+            this.buttonSin.Name = "buttonSin";
+            this.buttonSin.Size = new System.Drawing.Size(50, 50);
+            this.buttonSin.TabIndex = 26;
+            this.buttonSin.Text = "Sin";
+            this.buttonSin.UseVisualStyleBackColor = true;
+            // 
+            // buttonKvadratN
+            // 
+            this.buttonKvadratN.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKvadratN.Location = new System.Drawing.Point(525, 122);
+            this.buttonKvadratN.Name = "buttonKvadratN";
+            this.buttonKvadratN.Size = new System.Drawing.Size(50, 50);
+            this.buttonKvadratN.TabIndex = 25;
+            this.buttonKvadratN.Text = "a^n";
+            this.buttonKvadratN.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(525, 290);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(50, 50);
+            this.button16.TabIndex = 30;
+            this.button16.Text = "n√";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // buttonTan
+            // 
+            this.buttonTan.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTan.Location = new System.Drawing.Point(525, 234);
+            this.buttonTan.Name = "buttonTan";
+            this.buttonTan.Size = new System.Drawing.Size(50, 50);
+            this.buttonTan.TabIndex = 29;
+            this.buttonTan.Text = "Tan";
+            this.buttonTan.UseVisualStyleBackColor = true;
+            // 
+            // buttonCos
+            // 
+            this.buttonCos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCos.Location = new System.Drawing.Point(469, 234);
+            this.buttonCos.Name = "buttonCos";
+            this.buttonCos.Size = new System.Drawing.Size(50, 50);
+            this.buttonCos.TabIndex = 28;
+            this.buttonCos.Text = "Cos";
+            this.buttonCos.UseVisualStyleBackColor = true;
+            // 
+            // buttonLog
+            // 
+            this.buttonLog.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLog.Location = new System.Drawing.Point(525, 346);
+            this.buttonLog.Name = "buttonLog";
+            this.buttonLog.Size = new System.Drawing.Size(50, 50);
+            this.buttonLog.TabIndex = 31;
+            this.buttonLog.Text = "Log";
+            this.buttonLog.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(151, 73);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(258, 30);
+            this.textBox1.TabIndex = 33;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1184, 461);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonLog);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.buttonTan);
+            this.Controls.Add(this.buttonCos);
+            this.Controls.Add(this.buttonRoten);
+            this.Controls.Add(this.buttonSin);
+            this.Controls.Add(this.buttonKvadratN);
+            this.Controls.Add(this.buttonLn);
+            this.Controls.Add(this.buttonKvadrat2);
+            this.Controls.Add(this.buttonPi);
+            this.Controls.Add(this.buttonRparentes);
+            this.Controls.Add(this.buttonLparentes);
+            this.Controls.Add(this.buttonMultiplikation);
+            this.Controls.Add(this.buttonDivision);
+            this.Controls.Add(this.buttonSubtraktion);
+            this.Controls.Add(this.buttonAddition);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.buttonclear);
             this.Controls.Add(this.buttonreturn);
@@ -293,5 +495,22 @@
         private System.Windows.Forms.Button buttonreturn;
         private System.Windows.Forms.Button buttonclear;
         private System.Windows.Forms.Button buttonEnter;
+        private System.Windows.Forms.Button buttonMultiplikation;
+        private System.Windows.Forms.Button buttonDivision;
+        private System.Windows.Forms.Button buttonSubtraktion;
+        private System.Windows.Forms.Button buttonAddition;
+        private System.Windows.Forms.Button buttonRparentes;
+        private System.Windows.Forms.Button buttonLparentes;
+        private System.Windows.Forms.Button buttonLn;
+        private System.Windows.Forms.Button buttonKvadrat2;
+        private System.Windows.Forms.Button buttonPi;
+        private System.Windows.Forms.Button buttonRoten;
+        private System.Windows.Forms.Button buttonSin;
+        private System.Windows.Forms.Button buttonKvadratN;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button buttonTan;
+        private System.Windows.Forms.Button buttonCos;
+        private System.Windows.Forms.Button buttonLog;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
