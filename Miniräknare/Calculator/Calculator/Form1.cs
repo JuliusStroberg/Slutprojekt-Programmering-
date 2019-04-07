@@ -13,6 +13,8 @@ namespace Calculator
     public partial class Form1 : Form
     {
         double resultat = 0;
+        double ans;
+        string svar;
         String operation = "";
         bool angivet_värde = false;
 
@@ -83,43 +85,65 @@ namespace Calculator
             else
                 textBox1.Text = textBox1.Text + num.Text;
         }
-
+        /*När knapparna + - * eller / trycks på skörs metoden*/
         private void Aritmetisk_operation(object sender, EventArgs e)
         {
-            Button num = (Button) sender;
+            Button num = (Button) sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
             operation = num.Text;
-            resultat = Double.Parse(textBox1.Text);
+            resultat = Double.Parse(textBox1.Text); /*Det som stod i textrutan sparas för att användas i ekvationen*/
             textBox1.Text = "";
-            label1.Text = System.Convert.ToString(resultat) + " " + operation;
+            label1.Text = System.Convert.ToString(resultat) + " " + operation; /*Över textrutan visas det tidigare talet med operationen.*/
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            label1.Text = label1.Text + " " +textBox1.Text;
             switch (operation)
             {
-                case "+":
-                    textBox1.Text = (resultat + Double.Parse(textBox1.Text)).ToString();
+                case "+": /*Om det finns ett additions tecken görs en addition*/
+                    svar = (resultat + Double.Parse(textBox1.Text)).ToString();
                     break;
-                case "-":
-                    textBox1.Text = (resultat - Double.Parse(textBox1.Text)).ToString();
+                case "-": /*Om det finns ett subtraktions tecken görs en subtraktion*/
+                    svar = (resultat - Double.Parse(textBox1.Text)).ToString();
                     break;
-                case "*":
-                    textBox1.Text = (resultat * Double.Parse(textBox1.Text)).ToString();
+                case "*": /*Om det finns ett multiplikations tecken görs en multiplikation*/
+                    svar = (resultat * Double.Parse(textBox1.Text)).ToString();
                     break;
-                case "/":
-                    textBox1.Text = (resultat / Double.Parse(textBox1.Text)).ToString();
+                case "/": /*Om det finns ett divisions tecken görs en division*/
+                    svar = (resultat / Double.Parse(textBox1.Text)).ToString();
                     break;
                 default:
                     break;
-            }
-        }
 
+            }
+            /*Ekvationen skrivs ut överst och svaret sparas i en variabel för senare användning*/
+            label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
+            textBox1.Text = "0";
+            ans = double.Parse(svar);
+        }
+        /*När man trycker på clear nollställs allt*/
         private void buttonclear_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
             resultat = 0;
             label1.Text = "";
+        }
+        /*När man trycker på return försvinner den senaste skrivna siffran*/
+        private void buttonreturn_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length == 1) /*Om den bara finns en siffra i textrutan blir det en 0*/
+            {
+                textBox1.Text = "0";
+            }
+            
+            if(textBox1.Text.Length > 1) /*Om det finns mer än en siffra försvinner den längst till höger*/
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            }
+        }
+        /*Svaret man fick från förra ekvationen anropas och används*/
+        private void buttonAns_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = ans.ToString(); 
         }
     }
 }

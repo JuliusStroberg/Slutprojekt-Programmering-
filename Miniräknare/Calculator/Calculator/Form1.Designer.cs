@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.miniräknartypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utökadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hexadecimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binärToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typvärdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@
             this.buttonCos = new System.Windows.Forms.Button();
             this.buttonLog = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.utökadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,13 @@
             this.miniräknartypToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.miniräknartypToolStripMenuItem.Text = "Standard";
             this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.miniräknartypToolStripMenuItem_Click);
+            // 
+            // utökadToolStripMenuItem
+            // 
+            this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.utökadToolStripMenuItem.Text = "Utökad";
+            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.utökadToolStripMenuItem_Click);
             // 
             // hexadecimalToolStripMenuItem
             // 
@@ -233,6 +240,7 @@
             this.buttonAns.TabIndex = 11;
             this.buttonAns.Text = "Ans";
             this.buttonAns.UseVisualStyleBackColor = true;
+            this.buttonAns.Click += new System.EventHandler(this.buttonAns_Click);
             // 
             // buttonKomma
             // 
@@ -254,6 +262,7 @@
             this.buttonreturn.TabIndex = 13;
             this.buttonreturn.Text = "←";
             this.buttonreturn.UseVisualStyleBackColor = true;
+            this.buttonreturn.Click += new System.EventHandler(this.buttonreturn_Click);
             // 
             // buttonclear
             // 
@@ -284,7 +293,7 @@
             this.buttonMultiplikation.Name = "buttonMultiplikation";
             this.buttonMultiplikation.Size = new System.Drawing.Size(60, 43);
             this.buttonMultiplikation.TabIndex = 19;
-            this.buttonMultiplikation.Text = "·";
+            this.buttonMultiplikation.Text = "*";
             this.buttonMultiplikation.UseVisualStyleBackColor = true;
             this.buttonMultiplikation.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
@@ -295,7 +304,7 @@
             this.buttonDivision.Name = "buttonDivision";
             this.buttonDivision.Size = new System.Drawing.Size(60, 43);
             this.buttonDivision.TabIndex = 18;
-            this.buttonDivision.Text = "÷";
+            this.buttonDivision.Text = "/";
             this.buttonDivision.UseVisualStyleBackColor = true;
             this.buttonDivision.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
@@ -450,13 +459,6 @@
             this.textBox1.TabIndex = 33;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // utökadToolStripMenuItem
-            // 
-            this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.utökadToolStripMenuItem.Text = "Utökad";
-            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.utökadToolStripMenuItem_Click);
             // 
             // label1
             // 
