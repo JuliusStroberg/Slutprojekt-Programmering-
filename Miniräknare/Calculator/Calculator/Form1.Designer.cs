@@ -31,7 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.miniräknartypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utökadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hexadecimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HexadecimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binärToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typvärdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
@@ -75,12 +75,12 @@
             this.menuStrip1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miniräknartypToolStripMenuItem,
-            this.hexadecimalToolStripMenuItem,
+            this.HexadecimalToolStripMenuItem,
             this.binärToolStripMenuItem,
             this.typvärdeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(494, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(497, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,35 +91,35 @@
             this.miniräknartypToolStripMenuItem.Name = "miniräknartypToolStripMenuItem";
             this.miniräknartypToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.miniräknartypToolStripMenuItem.Text = "Standard";
-            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.miniräknartypToolStripMenuItem_Click);
+            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.MiniräknartypToolStripMenuItem_Click);
             // 
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
-            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.utökadToolStripMenuItem_Click);
+            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 
-            // hexadecimalToolStripMenuItem
+            // HexadecimalToolStripMenuItem
             // 
-            this.hexadecimalToolStripMenuItem.Name = "hexadecimalToolStripMenuItem";
-            this.hexadecimalToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.hexadecimalToolStripMenuItem.Text = "Hexadecimal";
-            this.hexadecimalToolStripMenuItem.Click += new System.EventHandler(this.hexadecimalToolStripMenuItem_Click);
+            this.HexadecimalToolStripMenuItem.Name = "HexadecimalToolStripMenuItem";
+            this.HexadecimalToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.HexadecimalToolStripMenuItem.Text = "Hexadecimal";
+            this.HexadecimalToolStripMenuItem.Click += new System.EventHandler(this.HexadecimalToolStripMenuItem_Click);
             // 
             // binärToolStripMenuItem
             // 
             this.binärToolStripMenuItem.Name = "binärToolStripMenuItem";
             this.binärToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.binärToolStripMenuItem.Text = "Binär";
-            this.binärToolStripMenuItem.Click += new System.EventHandler(this.binärToolStripMenuItem_Click);
+            this.binärToolStripMenuItem.Click += new System.EventHandler(this.BinärToolStripMenuItem_Click);
             // 
             // typvärdeToolStripMenuItem
             // 
             this.typvärdeToolStripMenuItem.Name = "typvärdeToolStripMenuItem";
             this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.typvärdeToolStripMenuItem.Text = "Typvärde";
-            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.typvärdeToolStripMenuItem_Click);
+            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.TypvärdeToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -130,7 +130,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_Click);
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // button2
             // 
@@ -141,7 +141,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_Click);
+            this.button2.Click += new System.EventHandler(this.Button_Click);
             // 
             // button3
             // 
@@ -152,7 +152,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button_Click);
+            this.button3.Click += new System.EventHandler(this.Button_Click);
             // 
             // button4
             // 
@@ -163,7 +163,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button_Click);
+            this.button4.Click += new System.EventHandler(this.Button_Click);
             // 
             // button5
             // 
@@ -174,7 +174,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button_Click);
+            this.button5.Click += new System.EventHandler(this.Button_Click);
             // 
             // button6
             // 
@@ -185,7 +185,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button_Click);
+            this.button6.Click += new System.EventHandler(this.Button_Click);
             // 
             // button7
             // 
@@ -196,7 +196,7 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button_Click);
+            this.button7.Click += new System.EventHandler(this.Button_Click);
             // 
             // button8
             // 
@@ -207,7 +207,7 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button_Click);
+            this.button8.Click += new System.EventHandler(this.Button_Click);
             // 
             // button9
             // 
@@ -218,7 +218,7 @@
             this.button9.TabIndex = 9;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button_Click);
+            this.button9.Click += new System.EventHandler(this.Button_Click);
             // 
             // button0
             // 
@@ -229,7 +229,7 @@
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
-            this.button0.Click += new System.EventHandler(this.button_Click);
+            this.button0.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonAns
             // 
@@ -240,7 +240,7 @@
             this.buttonAns.TabIndex = 11;
             this.buttonAns.Text = "Ans";
             this.buttonAns.UseVisualStyleBackColor = true;
-            this.buttonAns.Click += new System.EventHandler(this.buttonAns_Click);
+            this.buttonAns.Click += new System.EventHandler(this.ButtonAns_Click);
             // 
             // buttonKomma
             // 
@@ -251,7 +251,7 @@
             this.buttonKomma.TabIndex = 12;
             this.buttonKomma.Text = ".";
             this.buttonKomma.UseVisualStyleBackColor = true;
-            this.buttonKomma.Click += new System.EventHandler(this.button_Click);
+            this.buttonKomma.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonreturn
             // 
@@ -262,7 +262,7 @@
             this.buttonreturn.TabIndex = 13;
             this.buttonreturn.Text = "←";
             this.buttonreturn.UseVisualStyleBackColor = true;
-            this.buttonreturn.Click += new System.EventHandler(this.buttonreturn_Click);
+            this.buttonreturn.Click += new System.EventHandler(this.Buttonreturn_Click);
             // 
             // buttonclear
             // 
@@ -273,7 +273,7 @@
             this.buttonclear.TabIndex = 14;
             this.buttonclear.Text = "Clear";
             this.buttonclear.UseVisualStyleBackColor = true;
-            this.buttonclear.Click += new System.EventHandler(this.buttonclear_Click);
+            this.buttonclear.Click += new System.EventHandler(this.Buttonclear_Click);
             // 
             // buttonEnter
             // 
@@ -284,7 +284,7 @@
             this.buttonEnter.TabIndex = 15;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            this.buttonEnter.Click += new System.EventHandler(this.ButtonEnter_Click);
             // 
             // buttonMultiplikation
             // 
@@ -474,7 +474,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(494, 429);
+            this.ClientSize = new System.Drawing.Size(497, 429);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonLog);
@@ -524,7 +524,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem miniräknartypToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hexadecimalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HexadecimalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binärToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem typvärdeToolStripMenuItem;
         private System.Windows.Forms.Button button1;

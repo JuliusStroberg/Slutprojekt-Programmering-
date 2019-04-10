@@ -29,49 +29,58 @@ namespace Calculator
             textBox1.Width = 258;
         }
         /*Standard miniräknaren får den bredd som startskärmen*/
-        private void miniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MiniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Width = 510;
             textBox1.Width = 258;
         }
         /*Skrämens bredd ökas och visar därmed ytterligare knappar*/
-        private void utökadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Width = 685;
             textBox1.Width = 258;
         }
         /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
-        private void hexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Form2();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); }; /*När det nya form stängs ned öppnas det gamla igen*/
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form2
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); }; /*När det nya form stängs ned, öppnas den gamla igen*/
             frm.Show();
             this.Hide();
         }
         /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
-        private void binärToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Form2();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned öppnas det gamla igen*/
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form2
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
             frm.Show();
             this.Hide();
         }
         /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
-        private void typvärdeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Form2();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned öppnas det gamla igen*/
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form2
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
             frm.Show();
             this.Hide();
         }
         /*När knapparna från 0-9 eller . trycks på skörs metoden*/
-        private void button_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text == "0") || (angivet_värde))
                 textBox1.Text = "";
@@ -94,8 +103,8 @@ namespace Calculator
             textBox1.Text = "";
             label1.Text = System.Convert.ToString(resultat) + " " + operation; /*Över textrutan visas det tidigare talet med operationen.*/
         }
-
-        private void buttonEnter_Click(object sender, EventArgs e)
+        /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
+        private void ButtonEnter_Click(object sender, EventArgs e)
         {
             switch (operation)
             {
@@ -121,14 +130,14 @@ namespace Calculator
             ans = double.Parse(svar);
         }
         /*När man trycker på clear nollställs allt*/
-        private void buttonclear_Click(object sender, EventArgs e)
+        private void Buttonclear_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
             resultat = 0;
             label1.Text = "";
         }
         /*När man trycker på return försvinner den senaste skrivna siffran*/
-        private void buttonreturn_Click(object sender, EventArgs e)
+        private void Buttonreturn_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length == 1) /*Om den bara finns en siffra i textrutan blir det en 0*/
             {
@@ -141,7 +150,7 @@ namespace Calculator
             }
         }
         /*Svaret man fick från förra ekvationen anropas och används*/
-        private void buttonAns_Click(object sender, EventArgs e)
+        private void ButtonAns_Click(object sender, EventArgs e)
         {
             textBox1.Text = ans.ToString(); 
         }
