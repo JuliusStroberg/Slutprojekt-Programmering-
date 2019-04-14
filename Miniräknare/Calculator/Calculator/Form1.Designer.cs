@@ -67,7 +67,13 @@
             this.buttonLog = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,7 +86,7 @@
             this.typvärdeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(497, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(733, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,7 +102,7 @@
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
             this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 
@@ -369,6 +375,7 @@
             this.buttonKvadrat2.TabIndex = 23;
             this.buttonKvadrat2.Text = "a^2";
             this.buttonKvadrat2.UseVisualStyleBackColor = true;
+            this.buttonKvadrat2.Click += new System.EventHandler(this.buttonKvadrat2_Click);
             // 
             // buttonPi
             // 
@@ -379,6 +386,7 @@
             this.buttonPi.TabIndex = 22;
             this.buttonPi.Text = "π";
             this.buttonPi.UseVisualStyleBackColor = true;
+            this.buttonPi.Click += new System.EventHandler(this.buttonPi_Click);
             // 
             // buttonRoten
             // 
@@ -389,6 +397,7 @@
             this.buttonRoten.TabIndex = 27;
             this.buttonRoten.Text = "√";
             this.buttonRoten.UseVisualStyleBackColor = true;
+            this.buttonRoten.Click += new System.EventHandler(this.buttonRoten_Click);
             // 
             // buttonSin
             // 
@@ -399,6 +408,7 @@
             this.buttonSin.TabIndex = 26;
             this.buttonSin.Text = "Sin";
             this.buttonSin.UseVisualStyleBackColor = true;
+            this.buttonSin.Click += new System.EventHandler(this.buttonSin_Click);
             // 
             // buttonKvadratN
             // 
@@ -409,6 +419,7 @@
             this.buttonKvadratN.TabIndex = 25;
             this.buttonKvadratN.Text = "a^n";
             this.buttonKvadratN.UseVisualStyleBackColor = true;
+            this.buttonKvadratN.Click += new System.EventHandler(this.buttonKvadratN_Click);
             // 
             // button16
             // 
@@ -419,6 +430,7 @@
             this.button16.TabIndex = 30;
             this.button16.Text = "n√";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // buttonTan
             // 
@@ -469,12 +481,50 @@
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 34;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(664, 127);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(50, 20);
+            this.numericUpDown1.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(639, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 12);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "n =";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(664, 299);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(50, 20);
+            this.numericUpDown2.TabIndex = 37;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(636, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 12);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "n =";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(497, 429);
+            this.ClientSize = new System.Drawing.Size(733, 429);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonLog);
@@ -515,6 +565,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,5 +613,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem utökadToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label3;
     }
 }

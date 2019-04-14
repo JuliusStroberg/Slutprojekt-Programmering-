@@ -37,7 +37,7 @@ namespace Calculator
         /*Skrämens bredd ökas och visar därmed ytterligare knappar*/
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Width = 685;
+            this.Width = 750;
             textBox1.Width = 258;
         }
         /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
@@ -79,13 +79,17 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När knapparna från 0-9 eller . trycks på skörs metoden*/
+        /*När knapparna från 0-9, pi eller . trycks på skörs metoden*/
         private void Button_Click(object sender, EventArgs e)
         {
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
+            /*Om det står 0 i textboxen försvinnertalet om det man skriver in inte är .*/
             if ((textBox1.Text == "0") || (angivet_värde))
-                textBox1.Text = "";
+                if (num.Text != ".")
+                    textBox1.Text = "";  
+                
             angivet_värde = false;
-            Button num = (Button) sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
+           
             if (num.Text == ".") /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
             {
                 if (!textBox1.Text.Contains("."))
@@ -108,26 +112,30 @@ namespace Calculator
         {
             switch (operation)
             {
-                case "+": /*Om det finns ett additions tecken görs en addition*/
+                case "+": /*Om det finns ett additions tecken görs en addition och svaret sparas i en variabel för senare användning*/
                     svar = (resultat + Double.Parse(textBox1.Text)).ToString();
+                    ans = double.Parse(svar);
                     break;
-                case "-": /*Om det finns ett subtraktions tecken görs en subtraktion*/
+                case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
                     svar = (resultat - Double.Parse(textBox1.Text)).ToString();
+                    ans = double.Parse(svar);
                     break;
-                case "*": /*Om det finns ett multiplikations tecken görs en multiplikation*/
+                case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
                     svar = (resultat * Double.Parse(textBox1.Text)).ToString();
+                    ans = double.Parse(svar);
                     break;
-                case "/": /*Om det finns ett divisions tecken görs en division*/
+                case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
                     svar = (resultat / Double.Parse(textBox1.Text)).ToString();
+                    ans = double.Parse(svar);
                     break;
                 default:
                     break;
 
             }
-            /*Ekvationen skrivs ut överst och svaret sparas i en variabel för senare användning*/
+            /*Ekvationen skrivs ut överst*/
             label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
             textBox1.Text = "0";
-            ans = double.Parse(svar);
+            
         }
         /*När man trycker på clear nollställs allt*/
         private void Buttonclear_Click(object sender, EventArgs e)
@@ -153,6 +161,62 @@ namespace Calculator
         private void ButtonAns_Click(object sender, EventArgs e)
         {
             textBox1.Text = ans.ToString(); 
+        }
+        /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
+        private void buttonKvadrat2_Click(object sender, EventArgs e)
+        {
+            label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + (double.Parse(textBox1.Text) * double.Parse(textBox1.Text)).ToString();
+            textBox1.Text = "0";
+        }
+        /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
+        private void buttonKvadratN_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(textBox1.Text);
+            decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
+            double tal = a;
+            /*Talet a multipliceras med sig självt n antal gånger i en loop*/
+            for(int i = 1; i < n; i++)
+            {
+                tal = tal * a;
+            }
+            /*Svaret skrivs ut*/
+            label1.Text = textBox1.Text + "^" + n + " " + "=" + " " + tal;
+            textBox1.Text = "0";
+        }
+        /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
+        private void buttonPi_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = "";
+            }
+            textBox1.Text = textBox1.Text + Math.PI;
+        }
+
+        private void buttonSin_Click(object sender, EventArgs e)
+        {
+            double sin = double.Parse(textBox1.Text);
+            sin = Math.Cos(sin);
+            textBox1.Text = sin.ToString();
+        }
+        /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
+        private void buttonRoten_Click(object sender, EventArgs e)
+        {
+            double tal = double.Parse(textBox1.Text);
+            tal = Math.Sqrt(tal); //Uträkning
+            label1.Text = "√" + textBox1.Text + " " + "=" + " " + tal.ToString();
+            textBox1.Text = "0";
+        }
+        /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
+        private void button16_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(textBox1.Text);
+            double n = decimal.ToDouble(numericUpDown2.Value); //Talet n tas från värdet man kan välja bredvid knappen
+
+            double tal = Math.Pow(a, 1 / n); //Räknar n√ av det inskrivna talet
+
+            label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + tal;
+            textBox1.Text = "0";
         }
     }
 }
