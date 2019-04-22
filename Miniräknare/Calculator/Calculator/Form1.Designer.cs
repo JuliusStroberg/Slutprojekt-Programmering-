@@ -71,6 +71,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.ListboxHistorik = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -365,6 +366,7 @@
             this.buttonLn.TabIndex = 24;
             this.buttonLn.Text = "Ln";
             this.buttonLn.UseVisualStyleBackColor = true;
+            this.buttonLn.Click += new System.EventHandler(this.buttonLn_Click);
             // 
             // buttonKvadrat2
             // 
@@ -430,7 +432,7 @@
             this.button16.TabIndex = 30;
             this.button16.Text = "n√";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.Click += new System.EventHandler(this.buttonRotenN_Click);
             // 
             // buttonTan
             // 
@@ -461,6 +463,7 @@
             this.buttonLog.TabIndex = 31;
             this.buttonLog.Text = "Log";
             this.buttonLog.UseVisualStyleBackColor = true;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
             // 
             // textBox1
             // 
@@ -515,12 +518,24 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "n =";
             // 
+            // ListboxHistorik
+            // 
+            this.ListboxHistorik.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ListboxHistorik.Font = new System.Drawing.Font("Cambria", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListboxHistorik.FormattingEnabled = true;
+            this.ListboxHistorik.ItemHeight = 22;
+            this.ListboxHistorik.Location = new System.Drawing.Point(12, 99);
+            this.ListboxHistorik.Name = "ListboxHistorik";
+            this.ListboxHistorik.Size = new System.Drawing.Size(192, 290);
+            this.ListboxHistorik.TabIndex = 39;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(733, 429);
+            this.Controls.Add(this.ListboxHistorik);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label2);
@@ -617,5 +632,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox ListboxHistorik;
     }
 }
