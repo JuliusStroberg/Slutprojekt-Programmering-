@@ -366,7 +366,7 @@
             this.buttonLn.TabIndex = 24;
             this.buttonLn.Text = "Ln";
             this.buttonLn.UseVisualStyleBackColor = true;
-            this.buttonLn.Click += new System.EventHandler(this.buttonLn_Click);
+            this.buttonLn.Click += new System.EventHandler(this.ButtonLn_Click);
             // 
             // buttonKvadrat2
             // 
@@ -377,7 +377,7 @@
             this.buttonKvadrat2.TabIndex = 23;
             this.buttonKvadrat2.Text = "a^2";
             this.buttonKvadrat2.UseVisualStyleBackColor = true;
-            this.buttonKvadrat2.Click += new System.EventHandler(this.buttonKvadrat2_Click);
+            this.buttonKvadrat2.Click += new System.EventHandler(this.ButtonKvadrat2_Click);
             // 
             // buttonPi
             // 
@@ -388,7 +388,7 @@
             this.buttonPi.TabIndex = 22;
             this.buttonPi.Text = "π";
             this.buttonPi.UseVisualStyleBackColor = true;
-            this.buttonPi.Click += new System.EventHandler(this.buttonPi_Click);
+            this.buttonPi.Click += new System.EventHandler(this.ButtonPi_Click);
             // 
             // buttonRoten
             // 
@@ -399,7 +399,7 @@
             this.buttonRoten.TabIndex = 27;
             this.buttonRoten.Text = "√";
             this.buttonRoten.UseVisualStyleBackColor = true;
-            this.buttonRoten.Click += new System.EventHandler(this.buttonRoten_Click);
+            this.buttonRoten.Click += new System.EventHandler(this.ButtonRoten_Click);
             // 
             // buttonSin
             // 
@@ -410,7 +410,7 @@
             this.buttonSin.TabIndex = 26;
             this.buttonSin.Text = "Sin";
             this.buttonSin.UseVisualStyleBackColor = true;
-            this.buttonSin.Click += new System.EventHandler(this.buttonSin_Click);
+            this.buttonSin.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonKvadratN
             // 
@@ -421,7 +421,7 @@
             this.buttonKvadratN.TabIndex = 25;
             this.buttonKvadratN.Text = "a^n";
             this.buttonKvadratN.UseVisualStyleBackColor = true;
-            this.buttonKvadratN.Click += new System.EventHandler(this.buttonKvadratN_Click);
+            this.buttonKvadratN.Click += new System.EventHandler(this.ButtonKvadratN_Click);
             // 
             // button16
             // 
@@ -432,7 +432,7 @@
             this.button16.TabIndex = 30;
             this.button16.Text = "n√";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.buttonRotenN_Click);
+            this.button16.Click += new System.EventHandler(this.ButtonRotenN_Click);
             // 
             // buttonTan
             // 
@@ -443,6 +443,7 @@
             this.buttonTan.TabIndex = 29;
             this.buttonTan.Text = "Tan";
             this.buttonTan.UseVisualStyleBackColor = true;
+            this.buttonTan.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonCos
             // 
@@ -453,6 +454,7 @@
             this.buttonCos.TabIndex = 28;
             this.buttonCos.Text = "Cos";
             this.buttonCos.UseVisualStyleBackColor = true;
+            this.buttonCos.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonLog
             // 
@@ -463,7 +465,7 @@
             this.buttonLog.TabIndex = 31;
             this.buttonLog.Text = "Log";
             this.buttonLog.UseVisualStyleBackColor = true;
-            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
+            this.buttonLog.Click += new System.EventHandler(this.ButtonLog_Click);
             // 
             // textBox1
             // 
@@ -483,6 +485,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 34;
+            this.label1.TextChanged += new System.EventHandler(this.Uppdatering_historik);
             // 
             // numericUpDown1
             // 
@@ -528,6 +531,7 @@
             this.ListboxHistorik.Name = "ListboxHistorik";
             this.ListboxHistorik.Size = new System.Drawing.Size(192, 290);
             this.ListboxHistorik.TabIndex = 39;
+            this.ListboxHistorik.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // Form1
             // 

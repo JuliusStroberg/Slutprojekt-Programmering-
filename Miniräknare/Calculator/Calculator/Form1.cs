@@ -102,11 +102,11 @@ namespace Calculator
         /*När knapparna + - * eller / trycks på skörs metoden*/
         private void Aritmetisk_operation(object sender, EventArgs e)
         {
-            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
             operation = num.Text;
             resultat = Double.Parse(textBox1.Text); /*Det som stod i textrutan sparas för att användas i ekvationen*/
-            textBox1.Text = "";
-            label1.Text = System.Convert.ToString(resultat) + " " + operation; /*Över textrutan visas det tidigare talet med operationen.*/
+            textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
+            label1.Text = System.Convert.ToString(resultat) + " " + operation;
         }
         /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
         private void ButtonEnter_Click(object sender, EventArgs e)
@@ -136,12 +136,6 @@ namespace Calculator
             /*Ekvationen skrivs ut överst*/
             label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
             textBox1.Text = "0";
-            Historiken.Add(new Historik(label1.Text));
-            /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
-            for (int i = Historiken.Count; i >= 0; i--) 
-            {
-                ListboxHistorik.Items.Add(Historik.ekvation);
-            }
         }
         /*När man trycker på clear nollställs allt*/
         private void Buttonclear_Click(object sender, EventArgs e)
@@ -169,13 +163,13 @@ namespace Calculator
             textBox1.Text = ans.ToString();
         }
         /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
-        private void buttonKvadrat2_Click(object sender, EventArgs e)
+        private void ButtonKvadrat2_Click(object sender, EventArgs e)
         {
             label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + (double.Parse(textBox1.Text) * double.Parse(textBox1.Text)).ToString();
             textBox1.Text = "0";
         }
         /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
-        private void buttonKvadratN_Click(object sender, EventArgs e)
+        private void ButtonKvadratN_Click(object sender, EventArgs e)
         {
             double a = double.Parse(textBox1.Text);
             decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
@@ -190,7 +184,7 @@ namespace Calculator
             textBox1.Text = "0";
         }
         /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
-        private void buttonPi_Click(object sender, EventArgs e)
+        private void ButtonPi_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "0")
             {
@@ -198,15 +192,35 @@ namespace Calculator
             }
             textBox1.Text = textBox1.Text + Math.PI;
         }
-
-        private void buttonSin_Click(object sender, EventArgs e)
+        /*Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens*/
+        private void SinCosTan_Click(object sender, EventArgs e)
         {
-            double sin = double.Parse(textBox1.Text);
-            sin = Math.Cos(sin);
-            textBox1.Text = sin.ToString();
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
+            operation = num.Text;
+            double tal = double.Parse(textBox1.Text);
+            tal = tal * Math.PI / 180.0; //Omvandlas till radius
+            /*Switchen gör att beroende på vilken knapp som blir nedtryck körs olika uträkninar*/
+            switch (operation)
+            {
+                case "Sin":
+                    tal = Math.Sin(tal);
+                    label1.Text = "Sin(" + textBox1.Text + ") " + "= " + tal;
+                    break;
+                case "Cos":
+                    tal = Math.Cos(tal);
+                    label1.Text = "Cos(" + textBox1.Text + ") " + "= " + tal;
+                    break;
+                case "Tan":
+                    tal = Math.Tan(tal);
+                    label1.Text = "Tan(" + textBox1.Text + ") " + "= " + tal;
+                    break;
+                default:
+                    break;
+            }
+            textBox1.Text = "0";
         }
         /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
-        private void buttonRoten_Click(object sender, EventArgs e)
+        private void ButtonRoten_Click(object sender, EventArgs e)
         {
             double tal = double.Parse(textBox1.Text);
             tal = Math.Sqrt(tal); //Uträkning
@@ -214,7 +228,7 @@ namespace Calculator
             textBox1.Text = "0";
         }
         /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
-        private void buttonRotenN_Click(object sender, EventArgs e)
+        private void ButtonRotenN_Click(object sender, EventArgs e)
         {
             double a = double.Parse(textBox1.Text);
             double n = decimal.ToDouble(numericUpDown2.Value); //Talet n tas från värdet man kan välja bredvid knappen
@@ -225,7 +239,7 @@ namespace Calculator
             textBox1.Text = "0";
         }
 
-        private void buttonLn_Click(object sender, EventArgs e)
+        private void ButtonLn_Click(object sender, EventArgs e)
         {
             double tal = double.Parse(textBox1.Text);
             tal = Math.Log(tal);
@@ -233,13 +247,26 @@ namespace Calculator
             textBox1.Text = "0";
         }
 
-        private void buttonLog_Click(object sender, EventArgs e)
+        private void ButtonLog_Click(object sender, EventArgs e)
         {
             double tal = double.Parse(textBox1.Text);
             tal = Math.Log10(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + tal;
             textBox1.Text = "0";
         }
-        
+        /*Varje gång textboxen uppdateras läggs det till i historiken och skrivs ut i listboxen*/
+        private void Uppdatering_historik(object sender, EventArgs e)
+        {   /*if satsen säger att om label1 innehåller ett = tecken körs satsen*/
+            if (label1.Text.Contains("="))
+            {
+                Historiken.Add(new Historik(label1.Text)); 
+                ListboxHistorik.Items.Clear(); //Listboxen töms för att inte nya historiken ska skrivas ovanför den gamla
+                /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
+                for (int i = Historiken.Count; i > 0; i--)
+                {
+                    ListboxHistorik.Items.Add(Historiken[i - 1].Ekvation);
+                }
+            }
+        }
     }
 }

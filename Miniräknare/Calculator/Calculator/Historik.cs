@@ -8,11 +8,11 @@ namespace Calculator
 {
     class Historik
     {
-        public string ekvation { get; set; }
+        public string Ekvation { get; set; }
 
         public Historik(string ekv)
         {
-            ekvation = ekv;
+            Ekvation = ekv;
         }
     }
 }
