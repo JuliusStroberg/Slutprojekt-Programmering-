@@ -72,6 +72,7 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.ListboxHistorik = new System.Windows.Forms.ListBox();
+            this.labelHistorik = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -531,7 +532,16 @@
             this.ListboxHistorik.Name = "ListboxHistorik";
             this.ListboxHistorik.Size = new System.Drawing.Size(192, 290);
             this.ListboxHistorik.TabIndex = 39;
-            this.ListboxHistorik.Click += new System.EventHandler(this.SinCosTan_Click);
+            // 
+            // labelHistorik
+            // 
+            this.labelHistorik.AutoSize = true;
+            this.labelHistorik.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHistorik.Location = new System.Drawing.Point(60, 64);
+            this.labelHistorik.Name = "labelHistorik";
+            this.labelHistorik.Size = new System.Drawing.Size(93, 25);
+            this.labelHistorik.TabIndex = 40;
+            this.labelHistorik.Text = "Historik";
             // 
             // Form1
             // 
@@ -539,6 +549,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(733, 429);
+            this.Controls.Add(this.labelHistorik);
             this.Controls.Add(this.ListboxHistorik);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown2);
@@ -637,5 +648,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox ListboxHistorik;
+        private System.Windows.Forms.Label labelHistorik;
     }
 }

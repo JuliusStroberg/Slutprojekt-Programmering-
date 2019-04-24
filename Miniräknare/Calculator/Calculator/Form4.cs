@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Form2 : Form
+    public partial class Form4 : Form
     {
-        public Form2()
+        public Form4()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
             this.Width = 816;
-            textBox1.Width = 258;
         }
     }
 }

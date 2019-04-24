@@ -58,7 +58,7 @@ namespace Calculator
         private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
-            var frm = new Form2
+            var frm = new Form3
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
@@ -71,7 +71,7 @@ namespace Calculator
         private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
-            var frm = new Form2
+            var frm = new Form4
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
@@ -165,8 +165,10 @@ namespace Calculator
         /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
         private void ButtonKvadrat2_Click(object sender, EventArgs e)
         {
-            label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + (double.Parse(textBox1.Text) * double.Parse(textBox1.Text)).ToString();
+            double tal = double.Parse(textBox1.Text) * double.Parse(textBox1.Text);
+            label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + tal.ToString();
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
         /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
         private void ButtonKvadratN_Click(object sender, EventArgs e)
@@ -182,6 +184,7 @@ namespace Calculator
             /*Svaret skrivs ut*/
             label1.Text = textBox1.Text + "^" + n + " " + "=" + " " + tal;
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
         /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
         private void ButtonPi_Click(object sender, EventArgs e)
@@ -218,6 +221,7 @@ namespace Calculator
                     break;
             }
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
         /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
         private void ButtonRoten_Click(object sender, EventArgs e)
@@ -226,6 +230,7 @@ namespace Calculator
             tal = Math.Sqrt(tal); //Uträkning
             label1.Text = "√" + textBox1.Text + " " + "=" + " " + tal.ToString();
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
         /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
         private void ButtonRotenN_Click(object sender, EventArgs e)
@@ -237,22 +242,25 @@ namespace Calculator
 
             label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + tal;
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
-
+        /*Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen*/
         private void ButtonLn_Click(object sender, EventArgs e)
         {
             double tal = double.Parse(textBox1.Text);
             tal = Math.Log(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + tal;
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
-
+        /*Metoden hämtar det inskriva talet och lägger det i 10 logarimen*/
         private void ButtonLog_Click(object sender, EventArgs e)
         {
             double tal = double.Parse(textBox1.Text);
             tal = Math.Log10(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + tal;
             textBox1.Text = "0";
+            ans = tal; //Svaret kan anropas genom knappen ans
         }
         /*Varje gång textboxen uppdateras läggs det till i historiken och skrivs ut i listboxen*/
         private void Uppdatering_historik(object sender, EventArgs e)
