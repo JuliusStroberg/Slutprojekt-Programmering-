@@ -73,9 +73,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ListboxHistorik = new System.Windows.Forms.ListBox();
             this.labelHistorik = new System.Windows.Forms.Label();
+            this.buttonClearHistory = new System.Windows.Forms.Button();
+            this.buttonCallEquation = new System.Windows.Forms.Button();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -257,7 +261,7 @@
             this.buttonKomma.Name = "buttonKomma";
             this.buttonKomma.Size = new System.Drawing.Size(60, 60);
             this.buttonKomma.TabIndex = 12;
-            this.buttonKomma.Text = ".";
+            this.buttonKomma.Text = ",";
             this.buttonKomma.UseVisualStyleBackColor = true;
             this.buttonKomma.Click += new System.EventHandler(this.Button_Click);
             // 
@@ -537,11 +541,40 @@
             // 
             this.labelHistorik.AutoSize = true;
             this.labelHistorik.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistorik.Location = new System.Drawing.Point(60, 64);
+            this.labelHistorik.Location = new System.Drawing.Point(12, 68);
             this.labelHistorik.Name = "labelHistorik";
             this.labelHistorik.Size = new System.Drawing.Size(93, 25);
             this.labelHistorik.TabIndex = 40;
             this.labelHistorik.Text = "Historik";
+            // 
+            // buttonClearHistory
+            // 
+            this.buttonClearHistory.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearHistory.Location = new System.Drawing.Point(105, 68);
+            this.buttonClearHistory.Name = "buttonClearHistory";
+            this.buttonClearHistory.Size = new System.Drawing.Size(99, 23);
+            this.buttonClearHistory.TabIndex = 41;
+            this.buttonClearHistory.Text = "Clear HIstory";
+            this.buttonClearHistory.UseVisualStyleBackColor = true;
+            this.buttonClearHistory.Click += new System.EventHandler(this.buttonClearHistory_Click);
+            // 
+            // buttonCallEquation
+            // 
+            this.buttonCallEquation.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCallEquation.Location = new System.Drawing.Point(17, 395);
+            this.buttonCallEquation.Name = "buttonCallEquation";
+            this.buttonCallEquation.Size = new System.Drawing.Size(75, 23);
+            this.buttonCallEquation.TabIndex = 42;
+            this.buttonCallEquation.Text = "Call equation";
+            this.buttonCallEquation.UseVisualStyleBackColor = true;
+            this.buttonCallEquation.Click += new System.EventHandler(this.buttonCallEquation_Click);
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(105, 398);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDown3.TabIndex = 43;
             // 
             // Form1
             // 
@@ -549,6 +582,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(733, 429);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.buttonCallEquation);
+            this.Controls.Add(this.buttonClearHistory);
             this.Controls.Add(this.labelHistorik);
             this.Controls.Add(this.ListboxHistorik);
             this.Controls.Add(this.label3);
@@ -597,6 +633,7 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,5 +686,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox ListboxHistorik;
         private System.Windows.Forms.Label labelHistorik;
+        private System.Windows.Forms.Button buttonClearHistory;
+        private System.Windows.Forms.Button buttonCallEquation;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
     }
 }

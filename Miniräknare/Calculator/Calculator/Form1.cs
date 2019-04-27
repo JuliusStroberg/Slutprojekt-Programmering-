@@ -110,32 +110,38 @@ namespace Calculator
         }
         /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
         private void ButtonEnter_Click(object sender, EventArgs e)
-        {
-            switch (operation)
+        {  /*Skriver användaren inte in det andra värdet körs inte operationen*/
+            if (textBox1.Text != "")
             {
-                case "+": /*Om det finns ett additions tecken görs en addition och svaret sparas i en variabel för senare användning*/
-                    svar = (resultat + Double.Parse(textBox1.Text)).ToString();
-                    ans = double.Parse(svar);
-                    break;
-                case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
-                    svar = (resultat - Double.Parse(textBox1.Text)).ToString();
-                    ans = double.Parse(svar);
-                    break;
-                case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
-                    svar = (resultat * Double.Parse(textBox1.Text)).ToString();
-                    ans = double.Parse(svar);
-                    break;
-                case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
-                    svar = (resultat / Double.Parse(textBox1.Text)).ToString();
-                    ans = double.Parse(svar);
-                    break;
-                default:
-                    break;
+                switch (operation)
+                {
+                    case "+": /*Om det finns ett additions tecken görs en addition och svaret sparas i en variabel för senare användning*/
+                        svar = (resultat + Double.Parse(textBox1.Text)).ToString();
+                        ans = double.Parse(svar);
+                        break;
+                    case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
+                        svar = (resultat - Double.Parse(textBox1.Text)).ToString();
+                        ans = double.Parse(svar);
+                        break;
+                    case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
+                        svar = (resultat * Double.Parse(textBox1.Text)).ToString();
+                        ans = double.Parse(svar);
+                        break;
+                    case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
+                        svar = (resultat / Double.Parse(textBox1.Text)).ToString();
+                        ans = double.Parse(svar);
+                        break;
+                    default:
+                        break;
+                }
 
+                /*Ekvationen skrivs ut överst*/
+                label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
+                textBox1.Text = "0";
             }
-            /*Ekvationen skrivs ut överst*/
-            label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
-            textBox1.Text = "0";
+            else
+                label1.Text = "";
+            
         }
         /*När man trycker på clear nollställs allt*/
         private void Buttonclear_Click(object sender, EventArgs e)
@@ -266,15 +272,28 @@ namespace Calculator
         private void Uppdatering_historik(object sender, EventArgs e)
         {   /*if satsen säger att om label1 innehåller ett = tecken körs satsen*/
             if (label1.Text.Contains("="))
-            {
-                Historiken.Add(new Historik(label1.Text)); 
-                ListboxHistorik.Items.Clear(); //Listboxen töms för att inte nya historiken ska skrivas ovanför den gamla
-                /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
-                for (int i = Historiken.Count; i > 0; i--)
                 {
-                    ListboxHistorik.Items.Add(Historiken[i - 1].Ekvation);
+                    Historiken.Add(new Historik(label1.Text));
+                    ListboxHistorik.Items.Clear(); //Listboxen töms för att inte nya historiken ska skrivas ovanför den gamla
+                                                   /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
+                    for (int i = Historiken.Count; i > 0; i--)
+                    {
+                        ListboxHistorik.Items.Add(i + "." + "   " + Historiken[i - 1].Ekvation); // I fungerar som ett indexnummer
+                    }
                 }
-            }
+        }
+        /*Trycker man på knappen för Clear History rensas historiken*/
+        private void buttonClearHistory_Click(object sender, EventArgs e)
+        {
+            ListboxHistorik.Items.Clear();
+            Historiken.Clear();
+        }
+        /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
+        private void buttonCallEquation_Click(object sender, EventArgs e)
+        {
+            int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.
+            label1.Text = Historiken[n-1].Ekvation;
+            textBox1.Text = Historiken[n - 1].Ekvation.Split('=').Last(); // När ekvationen hämtas lägger sig svaret ut ekvationen i skrivrutan.
         }
     }
 }
