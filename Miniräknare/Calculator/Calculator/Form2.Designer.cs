@@ -247,6 +247,7 @@
             this.buttonKvadrat2.TabIndex = 63;
             this.buttonKvadrat2.Text = "a^2";
             this.buttonKvadrat2.UseVisualStyleBackColor = true;
+            this.buttonKvadrat2.Click += new System.EventHandler(this.ButtonKvadrat2_Click);
             // 
             // buttonPi
             // 
@@ -257,6 +258,7 @@
             this.buttonPi.TabIndex = 62;
             this.buttonPi.Text = "π";
             this.buttonPi.UseVisualStyleBackColor = true;
+            this.buttonPi.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonRparentes
             // 
@@ -287,6 +289,7 @@
             this.buttonMultiplikation.TabIndex = 59;
             this.buttonMultiplikation.Text = "*";
             this.buttonMultiplikation.UseVisualStyleBackColor = true;
+            this.buttonMultiplikation.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
             // buttonDivision
             // 
@@ -297,6 +300,7 @@
             this.buttonDivision.TabIndex = 58;
             this.buttonDivision.Text = "/";
             this.buttonDivision.UseVisualStyleBackColor = true;
+            this.buttonDivision.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
             // buttonSubtraktion
             // 
@@ -307,6 +311,7 @@
             this.buttonSubtraktion.TabIndex = 57;
             this.buttonSubtraktion.Text = "-";
             this.buttonSubtraktion.UseVisualStyleBackColor = true;
+            this.buttonSubtraktion.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
             // buttonAddition
             // 
@@ -317,6 +322,7 @@
             this.buttonAddition.TabIndex = 56;
             this.buttonAddition.Text = "+";
             this.buttonAddition.UseVisualStyleBackColor = true;
+            this.buttonAddition.Click += new System.EventHandler(this.Aritmetisk_operation);
             // 
             // buttonEnter
             // 
@@ -327,6 +333,7 @@
             this.buttonEnter.TabIndex = 55;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.ButtonEnter_Click);
             // 
             // buttonclear
             // 
@@ -337,6 +344,7 @@
             this.buttonclear.TabIndex = 54;
             this.buttonclear.Text = "Clear";
             this.buttonclear.UseVisualStyleBackColor = true;
+            this.buttonclear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonreturn
             // 
@@ -347,6 +355,7 @@
             this.buttonreturn.TabIndex = 53;
             this.buttonreturn.Text = "←";
             this.buttonreturn.UseVisualStyleBackColor = true;
+            this.buttonreturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
             // buttonKomma
             // 
@@ -355,8 +364,9 @@
             this.buttonKomma.Name = "buttonKomma";
             this.buttonKomma.Size = new System.Drawing.Size(60, 60);
             this.buttonKomma.TabIndex = 52;
-            this.buttonKomma.Text = ".";
+            this.buttonKomma.Text = ",";
             this.buttonKomma.UseVisualStyleBackColor = true;
+            this.buttonKomma.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonAns
             // 
@@ -367,6 +377,7 @@
             this.buttonAns.TabIndex = 51;
             this.buttonAns.Text = "Ans";
             this.buttonAns.UseVisualStyleBackColor = true;
+            this.buttonAns.Click += new System.EventHandler(this.ButtonAns_Click);
             // 
             // button0
             // 
@@ -377,6 +388,7 @@
             this.button0.TabIndex = 50;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.Button_Click);
             // 
             // button9
             // 
@@ -387,6 +399,7 @@
             this.button9.TabIndex = 49;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button_Click);
             // 
             // button8
             // 
@@ -397,6 +410,7 @@
             this.button8.TabIndex = 48;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button_Click);
             // 
             // button7
             // 
@@ -407,6 +421,7 @@
             this.button7.TabIndex = 47;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button_Click);
             // 
             // button6
             // 
@@ -417,6 +432,7 @@
             this.button6.TabIndex = 46;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button_Click);
             // 
             // button5
             // 
@@ -427,6 +443,7 @@
             this.button5.TabIndex = 45;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button_Click);
             // 
             // button4
             // 
@@ -437,6 +454,7 @@
             this.button4.TabIndex = 44;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button_Click);
             // 
             // button3
             // 
@@ -447,6 +465,7 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button_Click);
             // 
             // button2
             // 
@@ -457,6 +476,7 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button_Click);
             // 
             // button1
             // 
@@ -467,6 +487,7 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonF
             // 
@@ -477,6 +498,7 @@
             this.buttonF.TabIndex = 84;
             this.buttonF.Text = "F";
             this.buttonF.UseVisualStyleBackColor = true;
+            this.buttonF.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonE
             // 
@@ -487,6 +509,7 @@
             this.buttonE.TabIndex = 83;
             this.buttonE.Text = "E";
             this.buttonE.UseVisualStyleBackColor = true;
+            this.buttonE.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonD
             // 
@@ -497,6 +520,7 @@
             this.buttonD.TabIndex = 82;
             this.buttonD.Text = "D";
             this.buttonD.UseVisualStyleBackColor = true;
+            this.buttonD.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonC
             // 
@@ -507,6 +531,7 @@
             this.buttonC.TabIndex = 81;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = true;
+            this.buttonC.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonB
             // 
@@ -517,6 +542,7 @@
             this.buttonB.TabIndex = 80;
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = true;
+            this.buttonB.Click += new System.EventHandler(this.Button_Click);
             // 
             // buttonA
             // 
@@ -527,6 +553,7 @@
             this.buttonA.TabIndex = 85;
             this.buttonA.Text = "A";
             this.buttonA.UseVisualStyleBackColor = true;
+            this.buttonA.Click += new System.EventHandler(this.Button_Click);
             // 
             // menuStrip1
             // 
@@ -549,12 +576,14 @@
             this.miniräknartypToolStripMenuItem.Name = "miniräknartypToolStripMenuItem";
             this.miniräknartypToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.miniräknartypToolStripMenuItem.Text = "Standard";
+            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.MiniräknartypToolStripMenuItem_Click);
             // 
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
+            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 
             // HexadecimalToolStripMenuItem
             // 
@@ -567,12 +596,14 @@
             this.binärToolStripMenuItem.Name = "binärToolStripMenuItem";
             this.binärToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.binärToolStripMenuItem.Text = "Binär";
+            this.binärToolStripMenuItem.Click += new System.EventHandler(this.BinärToolStripMenuItem_Click);
             // 
             // typvärdeToolStripMenuItem
             // 
             this.typvärdeToolStripMenuItem.Name = "typvärdeToolStripMenuItem";
             this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.typvärdeToolStripMenuItem.Text = "Typvärde";
+            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.TypvärdeToolStripMenuItem_Click);
             // 
             // Form2
             // 
