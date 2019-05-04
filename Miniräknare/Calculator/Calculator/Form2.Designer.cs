@@ -177,6 +177,7 @@
             this.button16.TabIndex = 70;
             this.button16.Text = "n√";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.ButtonRotenN_Click);
             // 
             // buttonTan
             // 
@@ -187,6 +188,7 @@
             this.buttonTan.TabIndex = 69;
             this.buttonTan.Text = "Tan";
             this.buttonTan.UseVisualStyleBackColor = true;
+            this.buttonTan.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonCos
             // 
@@ -197,6 +199,7 @@
             this.buttonCos.TabIndex = 68;
             this.buttonCos.Text = "Cos";
             this.buttonCos.UseVisualStyleBackColor = true;
+            this.buttonCos.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonRoten
             // 
@@ -207,6 +210,7 @@
             this.buttonRoten.TabIndex = 67;
             this.buttonRoten.Text = "√";
             this.buttonRoten.UseVisualStyleBackColor = true;
+            this.buttonRoten.Click += new System.EventHandler(this.ButtonRoten_Click);
             // 
             // buttonSin
             // 
@@ -217,6 +221,7 @@
             this.buttonSin.TabIndex = 66;
             this.buttonSin.Text = "Sin";
             this.buttonSin.UseVisualStyleBackColor = true;
+            this.buttonSin.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonKvadratN
             // 
@@ -227,6 +232,7 @@
             this.buttonKvadratN.TabIndex = 65;
             this.buttonKvadratN.Text = "a^n";
             this.buttonKvadratN.UseVisualStyleBackColor = true;
+            this.buttonKvadratN.Click += new System.EventHandler(this.buttonKvadratN_Click);
             // 
             // buttonLn
             // 
@@ -258,7 +264,7 @@
             this.buttonPi.TabIndex = 62;
             this.buttonPi.Text = "π";
             this.buttonPi.UseVisualStyleBackColor = true;
-            this.buttonPi.Click += new System.EventHandler(this.Button_Click);
+            this.buttonPi.Click += new System.EventHandler(this.ButtonPi_Click);
             // 
             // buttonRparentes
             // 
@@ -581,7 +587,7 @@
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
             this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 

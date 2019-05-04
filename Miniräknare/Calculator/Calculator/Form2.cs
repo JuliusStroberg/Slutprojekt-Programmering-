@@ -13,7 +13,6 @@ namespace Calculator
     public partial class Form2 : Form
     {
         int resultat = 0;
-        int ans;
         int intvalue = 0;
         string svar;
         String operation = "";
@@ -177,6 +176,81 @@ namespace Calculator
             int tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber) * int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
             label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + tal.ToString("X");
             textBox1.Text = "0";
+            svar = tal.ToString();
+        }
+        /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
+        private void buttonKvadratN_Click(object sender, EventArgs e)
+        {
+            int a = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+            decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
+            int tal = a;
+            /*Talet a multipliceras med sig självt n antal gånger i en loop*/
+            for (int i = 1; i < n; i++)
+            {
+                tal = tal * a;
+            }
+            /*Svaret skrivs ut*/
+            label1.Text = textBox1.Text + "^" + n + " " + "=" + " " + tal.ToString("X");
+            textBox1.Text = "0";
+            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+        }
+        /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
+        private void ButtonPi_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = "";
+            }
+            textBox1.Text = textBox1.Text + Math.PI.ToString("X");
+        }
+        /*Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens*/
+        private void SinCosTan_Click(object sender, EventArgs e)
+        {
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
+            operation = num.Text;
+            double tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+            tal = tal * Math.PI / 180.0; //Omvandlas till radius
+            /*Switchen gör att beroende på vilken knapp som blir nedtryck körs olika uträkninar*/
+            switch (operation)
+            {
+                case "Sin":
+                    tal = Math.Sin(tal);
+                    label1.Text = "Sin(" + textBox1.Text + ") " + "= " + tal;
+                    break;
+                case "Cos":
+                    tal = Math.Cos(tal);
+                    label1.Text = "Cos(" + textBox1.Text + ") " + "= " + tal.ToString("X");
+                    break;
+                case "Tan":
+                    tal = Math.Tan(tal);
+                    label1.Text = "Tan(" + textBox1.Text + ") " + "= " + tal.ToString("X");
+                    break;
+                default:
+                    break;
+            }
+            textBox1.Text = "0";
+            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+        }
+        /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
+        private void ButtonRoten_Click(object sender, EventArgs e)
+        {
+            double tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+            tal = Math.Sqrt(tal); //Uträkning
+            label1.Text = "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste heltalet
+            textBox1.Text = "0";
+            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+        }
+        /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
+        private void ButtonRotenN_Click(object sender, EventArgs e)
+        {
+            double a = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+            double n = decimal.ToDouble(numericUpDown2.Value); //Talet n tas från värdet man kan välja bredvid knappen
+
+            double tal = Math.Pow(a, 1 / n); //Räknar n√ av det inskrivna talet
+
+            label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste heltalet
+            textBox1.Text = "0";
+            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
         }
     }
 }
