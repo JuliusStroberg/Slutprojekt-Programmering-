@@ -268,7 +268,7 @@ namespace Calculator
             textBox1.Text = "0";
             ans = tal; //Svaret kan anropas genom knappen ans
         }
-        /*Varje gång textboxen uppdateras läggs det till i historiken och skrivs ut i listboxen*/
+        /*Varje gång label1 uppdateras läggs det till i historiken och skrivs ut i listboxen*/
         private void Uppdatering_historik(object sender, EventArgs e)
         {   /*if satsen säger att om label1 innehåller ett = tecken körs satsen*/
             if (label1.Text.Contains("="))
