@@ -12,6 +12,13 @@ namespace Calculator
 {
     public partial class Form3 : Form
     {
+        int resultat = 0;
+        int intvalue = 0;
+        string svar;
+        String operation = "";
+        bool angivet_värde = false;
+        List<Historik> Historiken = new List<Historik>(); //Skapar en lista som håller all historik
+
         public Form3()
         {
             InitializeComponent();
@@ -21,6 +28,229 @@ namespace Calculator
         {
             this.Width = 816;
             textBox1.Width = 258;
+        }
+        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        private void miniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form1
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.Show();
+            this.Hide();
+        }
+        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        private void utökadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form1
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.Show();
+            this.Hide();
+        }
+        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form2
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); }; /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.Show();
+            this.Hide();
+        }
+        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        private void typvärdeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            var frm = new Form4
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.Show();
+            this.Hide();
+        }
+        /*När metoden körs omvandlas en binär string till en int*/
+        public static int StringToInt(string bits)
+        {
+            var reversedBits = bits.Reverse().ToArray(); //En array av alla tal skapas och skrivs i omvänd ordning
+            var num = 0; // En variabel som sparar det totala värdet
+            for (var exponent = 0; exponent < reversedBits.Count(); exponent++) //En for loop som går igenom alla tal 
+            {
+                var currentBit = reversedBits[exponent];
+                /*Det numret loopen är på checkas om det är en 1:a. Om ja blir 2 upphöjt med den plats i arrayen 1:an står på (exponent) och läggs till i variabeln num. */
+                if (currentBit == '1')
+                {
+                    var term = (int)Math.Pow(2, exponent);
+                    num += term;
+                }
+            }
+            return num; // Det omvandlade talet skickas tilbaka som en int
+        }
+        /*När knapparna 0 eller 1 trycks på skörs metoden*/
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
+            /*Om det står 0 i textboxen försvinnertalet om det man skriver in inte är .*/
+            if ((textBox1.Text == "0") || (angivet_värde))
+                if (num.Text != ".")
+                    textBox1.Text = "";
+
+            angivet_värde = false;
+
+            if (num.Text == ".") /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
+            {
+                if (!textBox1.Text.Contains("."))
+                    textBox1.Text = textBox1.Text + num.Text;
+            }
+            else
+                textBox1.Text = textBox1.Text + num.Text;
+        }
+        /*När knapparna + - * eller / trycks på skörs metoden*/
+        private void Aritmetisk_operationer(object sender, EventArgs e)
+        {
+            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
+            operation = num.Text;
+            resultat = StringToInt(textBox1.Text); //Metoden BitStringToInt anropas för att omvandla från binärt till decimal
+            label1.Text = Convert.ToString(resultat, 2) + " " + operation; //Skriver ut talet i det binära talsystemet
+            textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
+        }
+        /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
+        private void ButonEnter_Click(object sender, EventArgs e)
+        {
+            /*Skriver användaren inte in det andra värdet körs inte operationen*/
+            if (textBox1.Text != "")
+            {
+                switch (operation)
+                {
+                    case "+": /*Om det finns ett additions tecken görs en addition och svaret sparas i en variabel för senare användning*/
+                        intvalue = resultat + StringToInt(textBox1.Text);
+                        svar = Convert.ToString(intvalue, 2);
+                        break;
+                    case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
+                        intvalue = resultat - StringToInt(textBox1.Text);
+                        svar = Convert.ToString(intvalue, 2);
+                        break;
+                    case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
+                        intvalue = resultat * StringToInt(textBox1.Text);
+                        svar = Convert.ToString(intvalue, 2);
+                        break;
+                    case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
+                        intvalue = resultat - StringToInt(textBox1.Text);
+                        svar = Convert.ToString(intvalue, 2);
+                        break;
+                    default:
+                        break;
+                }
+
+                /*Ekvationen skrivs ut överst*/
+                label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
+                textBox1.Text = "0";
+            }
+            else
+                label1.Text = "";
+        }
+        /*När man trycker på clear nollställs allt*/
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
+            resultat = 0;
+            label1.Text = "";
+        }
+        /*När man trycker på return försvinner den senaste skrivna siffran*/
+        private void ButtonReturn_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length == 1) /*Om den bara finns en siffra i textrutan blir det en 0*/
+            {
+                textBox1.Text = "0";
+            }
+
+            if (textBox1.Text.Length > 1) /*Om det finns mer än en siffra försvinner den längst till höger*/
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            }
+        }
+        /*Svaret man fick från förra ekvationen anropas och används*/
+        private void ButtonAns_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = svar;
+        }
+        /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
+        private void ButtonKvadrat2_Click(object sender, EventArgs e)
+        {
+            int tal = StringToInt(textBox1.Text) * StringToInt(textBox1.Text); // Metod för omvandling från binär till decimal anropas och körs i kvadrat
+            label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + Convert.ToString(tal, 2);
+            textBox1.Text = "0";
+            svar = Convert.ToString(tal, 2);
+        }
+        /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
+        private void ButtonKvadratN_Click(object sender, EventArgs e)
+        {
+            int a = StringToInt(textBox1.Text); // Metod för omvandling från binär till decimal anropas
+            decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
+            int tal = a;
+            /*Talet a multipliceras med sig självt n antal gånger i en loop*/
+            for (int i = 1; i < n; i++)
+            {
+                tal = tal * a;
+            }
+            /*Svaret skrivs ut*/
+            label1.Text = textBox1.Text + "^" + n + " " + "=" + " " + Convert.ToString(tal, 2);
+            textBox1.Text = "0";
+            svar = Convert.ToString(tal, 2); //Svaret kan anropas genom knappen ans
+        }
+
+        private void ButtonPi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SinCosTan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonRoten_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonRotenN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonLn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonLog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Uppdatering_historik(object sender, EventArgs e)
+        {
+
+        }
+        /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
+        private void ButtonClearHistory_Click(object sender, EventArgs e)
+        {
+            int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.
+            label1.Text = Historiken[n - 1].Ekvation;
+            textBox1.Text = Historiken[n - 1].Ekvation.Split('=').Last(); // När ekvationen hämtas lägger sig svaret ut ekvationen i skrivrutan.
         }
     }
 }

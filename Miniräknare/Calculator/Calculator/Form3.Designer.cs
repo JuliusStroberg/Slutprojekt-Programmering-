@@ -65,16 +65,20 @@
             this.HexadecimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binärToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typvärdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonClearHistory = new System.Windows.Forms.Button();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.buttonCallEquation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHistorik
             // 
             this.labelHistorik.AutoSize = true;
             this.labelHistorik.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHistorik.Location = new System.Drawing.Point(97, 66);
+            this.labelHistorik.Location = new System.Drawing.Point(44, 65);
             this.labelHistorik.Name = "labelHistorik";
             this.labelHistorik.Size = new System.Drawing.Size(93, 25);
             this.labelHistorik.TabIndex = 79;
@@ -133,6 +137,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 73;
+            this.label1.TextChanged += new System.EventHandler(this.Uppdatering_historik);
             // 
             // textBox1
             // 
@@ -153,6 +158,7 @@
             this.buttonLog.TabIndex = 71;
             this.buttonLog.Text = "Log";
             this.buttonLog.UseVisualStyleBackColor = true;
+            this.buttonLog.Click += new System.EventHandler(this.ButtonLog_Click);
             // 
             // button16
             // 
@@ -163,6 +169,7 @@
             this.button16.TabIndex = 70;
             this.button16.Text = "n√";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.ButtonRotenN_Click);
             // 
             // buttonTan
             // 
@@ -173,6 +180,7 @@
             this.buttonTan.TabIndex = 69;
             this.buttonTan.Text = "Tan";
             this.buttonTan.UseVisualStyleBackColor = true;
+            this.buttonTan.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonCos
             // 
@@ -183,6 +191,7 @@
             this.buttonCos.TabIndex = 68;
             this.buttonCos.Text = "Cos";
             this.buttonCos.UseVisualStyleBackColor = true;
+            this.buttonCos.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonRoten
             // 
@@ -193,6 +202,7 @@
             this.buttonRoten.TabIndex = 67;
             this.buttonRoten.Text = "√";
             this.buttonRoten.UseVisualStyleBackColor = true;
+            this.buttonRoten.Click += new System.EventHandler(this.ButtonRoten_Click);
             // 
             // buttonSin
             // 
@@ -203,6 +213,7 @@
             this.buttonSin.TabIndex = 66;
             this.buttonSin.Text = "Sin";
             this.buttonSin.UseVisualStyleBackColor = true;
+            this.buttonSin.Click += new System.EventHandler(this.SinCosTan_Click);
             // 
             // buttonKvadratN
             // 
@@ -213,6 +224,7 @@
             this.buttonKvadratN.TabIndex = 65;
             this.buttonKvadratN.Text = "a^n";
             this.buttonKvadratN.UseVisualStyleBackColor = true;
+            this.buttonKvadratN.Click += new System.EventHandler(this.ButtonKvadratN_Click);
             // 
             // buttonLn
             // 
@@ -223,6 +235,7 @@
             this.buttonLn.TabIndex = 64;
             this.buttonLn.Text = "Ln";
             this.buttonLn.UseVisualStyleBackColor = true;
+            this.buttonLn.Click += new System.EventHandler(this.ButtonLn_Click);
             // 
             // buttonKvadrat2
             // 
@@ -233,6 +246,7 @@
             this.buttonKvadrat2.TabIndex = 63;
             this.buttonKvadrat2.Text = "a^2";
             this.buttonKvadrat2.UseVisualStyleBackColor = true;
+            this.buttonKvadrat2.Click += new System.EventHandler(this.ButtonKvadrat2_Click);
             // 
             // buttonPi
             // 
@@ -243,6 +257,7 @@
             this.buttonPi.TabIndex = 62;
             this.buttonPi.Text = "π";
             this.buttonPi.UseVisualStyleBackColor = true;
+            this.buttonPi.Click += new System.EventHandler(this.ButtonPi_Click);
             // 
             // buttonRparentes
             // 
@@ -273,6 +288,7 @@
             this.buttonMultiplikation.TabIndex = 59;
             this.buttonMultiplikation.Text = "*";
             this.buttonMultiplikation.UseVisualStyleBackColor = true;
+            this.buttonMultiplikation.Click += new System.EventHandler(this.Aritmetisk_operationer);
             // 
             // buttonDivision
             // 
@@ -283,6 +299,7 @@
             this.buttonDivision.TabIndex = 58;
             this.buttonDivision.Text = "/";
             this.buttonDivision.UseVisualStyleBackColor = true;
+            this.buttonDivision.Click += new System.EventHandler(this.Aritmetisk_operationer);
             // 
             // buttonSubtraktion
             // 
@@ -293,6 +310,7 @@
             this.buttonSubtraktion.TabIndex = 57;
             this.buttonSubtraktion.Text = "-";
             this.buttonSubtraktion.UseVisualStyleBackColor = true;
+            this.buttonSubtraktion.Click += new System.EventHandler(this.Aritmetisk_operationer);
             // 
             // buttonAddition
             // 
@@ -303,6 +321,7 @@
             this.buttonAddition.TabIndex = 56;
             this.buttonAddition.Text = "+";
             this.buttonAddition.UseVisualStyleBackColor = true;
+            this.buttonAddition.Click += new System.EventHandler(this.Aritmetisk_operationer);
             // 
             // buttonEnter
             // 
@@ -313,6 +332,7 @@
             this.buttonEnter.TabIndex = 55;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.ButonEnter_Click);
             // 
             // buttonclear
             // 
@@ -323,6 +343,7 @@
             this.buttonclear.TabIndex = 54;
             this.buttonclear.Text = "Clear";
             this.buttonclear.UseVisualStyleBackColor = true;
+            this.buttonclear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonreturn
             // 
@@ -333,6 +354,7 @@
             this.buttonreturn.TabIndex = 53;
             this.buttonreturn.Text = "←";
             this.buttonreturn.UseVisualStyleBackColor = true;
+            this.buttonreturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
             // buttonKomma
             // 
@@ -353,6 +375,7 @@
             this.buttonAns.TabIndex = 51;
             this.buttonAns.Text = "Ans";
             this.buttonAns.UseVisualStyleBackColor = true;
+            this.buttonAns.Click += new System.EventHandler(this.ButtonAns_Click);
             // 
             // button0
             // 
@@ -363,6 +386,7 @@
             this.button0.TabIndex = 50;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.Button_Click);
             // 
             // button1
             // 
@@ -373,6 +397,7 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // menuStrip1
             // 
@@ -395,18 +420,21 @@
             this.miniräknartypToolStripMenuItem.Name = "miniräknartypToolStripMenuItem";
             this.miniräknartypToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.miniräknartypToolStripMenuItem.Text = "Standard";
+            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.miniräknartypToolStripMenuItem_Click);
             // 
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
+            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.utökadToolStripMenuItem_Click);
             // 
             // HexadecimalToolStripMenuItem
             // 
             this.HexadecimalToolStripMenuItem.Name = "HexadecimalToolStripMenuItem";
             this.HexadecimalToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.HexadecimalToolStripMenuItem.Text = "Hexadecimal";
+            this.HexadecimalToolStripMenuItem.Click += new System.EventHandler(this.HexadecimalToolStripMenuItem_Click);
             // 
             // binärToolStripMenuItem
             // 
@@ -419,6 +447,35 @@
             this.typvärdeToolStripMenuItem.Name = "typvärdeToolStripMenuItem";
             this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.typvärdeToolStripMenuItem.Text = "Typvärde";
+            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.typvärdeToolStripMenuItem_Click);
+            // 
+            // buttonClearHistory
+            // 
+            this.buttonClearHistory.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearHistory.Location = new System.Drawing.Point(142, 67);
+            this.buttonClearHistory.Name = "buttonClearHistory";
+            this.buttonClearHistory.Size = new System.Drawing.Size(99, 23);
+            this.buttonClearHistory.TabIndex = 88;
+            this.buttonClearHistory.Text = "Clear HIstory";
+            this.buttonClearHistory.UseVisualStyleBackColor = true;
+            this.buttonClearHistory.Click += new System.EventHandler(this.ButtonClearHistory_Click);
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(150, 400);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDown3.TabIndex = 91;
+            // 
+            // buttonCallEquation
+            // 
+            this.buttonCallEquation.Font = new System.Drawing.Font("Cambria", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCallEquation.Location = new System.Drawing.Point(62, 397);
+            this.buttonCallEquation.Name = "buttonCallEquation";
+            this.buttonCallEquation.Size = new System.Drawing.Size(75, 23);
+            this.buttonCallEquation.TabIndex = 90;
+            this.buttonCallEquation.Text = "Call equation";
+            this.buttonCallEquation.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
@@ -426,6 +483,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.buttonCallEquation);
+            this.Controls.Add(this.buttonClearHistory);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelHistorik);
             this.Controls.Add(this.ListboxHistorik);
@@ -465,6 +525,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +570,8 @@
         private System.Windows.Forms.ToolStripMenuItem HexadecimalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binärToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem typvärdeToolStripMenuItem;
+        private System.Windows.Forms.Button buttonClearHistory;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Button buttonCallEquation;
     }
 }

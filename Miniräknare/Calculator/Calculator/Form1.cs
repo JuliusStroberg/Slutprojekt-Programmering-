@@ -283,16 +283,16 @@ namespace Calculator
                 }
         }
         /*Trycker man på knappen för Clear History rensas historiken*/
-        private void buttonClearHistory_Click(object sender, EventArgs e)
+        private void ButtonClearHistory_Click(object sender, EventArgs e)
         {
             ListboxHistorik.Items.Clear();
             Historiken.Clear();
         }
         /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
-        private void buttonCallEquation_Click(object sender, EventArgs e)
+        private void ButtonCallEquation_Click(object sender, EventArgs e)
         {
             int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.
-            label1.Text = Historiken[n-1].Ekvation;
+            label1.Text = Historiken[n - 1].Ekvation;
             textBox1.Text = Historiken[n - 1].Ekvation.Split('=').Last(); // När ekvationen hämtas lägger sig svaret ut ekvationen i skrivrutan.
         }
     }

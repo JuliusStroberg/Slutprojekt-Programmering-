@@ -291,7 +291,7 @@ namespace Calculator
             Historiken.Clear();
         }
         /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
-        private void ButtonClearEquation_Click(object sender, EventArgs e)
+        private void ButtonCallEquation_Click(object sender, EventArgs e)
         {
             int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.
             label1.Text = Historiken[n - 1].Ekvation;

@@ -645,7 +645,7 @@
             this.buttonCallEquation.TabIndex = 88;
             this.buttonCallEquation.Text = "Call equation";
             this.buttonCallEquation.UseVisualStyleBackColor = true;
-            this.buttonCallEquation.Click += new System.EventHandler(this.ButtonClearEquation_Click);
+            this.buttonCallEquation.Click += new System.EventHandler(this.ButtonCallEquation_Click);
             // 
             // Form2
             // 

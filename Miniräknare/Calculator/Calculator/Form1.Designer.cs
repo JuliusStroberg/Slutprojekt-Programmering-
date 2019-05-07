@@ -556,7 +556,7 @@
             this.buttonClearHistory.TabIndex = 41;
             this.buttonClearHistory.Text = "Clear HIstory";
             this.buttonClearHistory.UseVisualStyleBackColor = true;
-            this.buttonClearHistory.Click += new System.EventHandler(this.buttonClearHistory_Click);
+            this.buttonClearHistory.Click += new System.EventHandler(this.ButtonClearHistory_Click);
             // 
             // buttonCallEquation
             // 
@@ -567,7 +567,7 @@
             this.buttonCallEquation.TabIndex = 42;
             this.buttonCallEquation.Text = "Call equation";
             this.buttonCallEquation.UseVisualStyleBackColor = true;
-            this.buttonCallEquation.Click += new System.EventHandler(this.buttonCallEquation_Click);
+            this.buttonCallEquation.Click += new System.EventHandler(this.ButtonCallEquation_Click);
             // 
             // numericUpDown3
             // 
