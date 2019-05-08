@@ -238,7 +238,7 @@
             this.buttonKvadratN.TabIndex = 65;
             this.buttonKvadratN.Text = "a^n";
             this.buttonKvadratN.UseVisualStyleBackColor = true;
-            this.buttonKvadratN.Click += new System.EventHandler(this.buttonKvadratN_Click);
+            this.buttonKvadratN.Click += new System.EventHandler(this.ButtonKvadratN_Click);
             // 
             // buttonLn
             // 

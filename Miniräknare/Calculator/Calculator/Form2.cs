@@ -179,7 +179,7 @@ namespace Calculator
             svar = tal.ToString();
         }
         /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
-        private void buttonKvadratN_Click(object sender, EventArgs e)
+        private void ButtonKvadratN_Click(object sender, EventArgs e)
         {
             int a = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
             decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
@@ -204,6 +204,7 @@ namespace Calculator
             textBox1.Text = textBox1.Text + Math.PI.ToString("X");
         }
         /*Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens*/
+        /*Svaret avrundas ned till närmaste heltal*/
         private void SinCosTan_Click(object sender, EventArgs e)
         {
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
@@ -215,21 +216,21 @@ namespace Calculator
             {
                 case "Sin":
                     tal = Math.Sin(tal);
-                    label1.Text = "Sin(" + textBox1.Text + ") " + "= " + tal;
+                    label1.Text = "Sin(" + textBox1.Text + ") " + "= " + ((int)Math.Round(tal)).ToString("X");
                     break;
                 case "Cos":
                     tal = Math.Cos(tal);
-                    label1.Text = "Cos(" + textBox1.Text + ") " + "= " + tal.ToString("X");
+                    label1.Text = "Cos(" + textBox1.Text + ") " + "= " + ((int)Math.Round(tal)).ToString("X");
                     break;
                 case "Tan":
                     tal = Math.Tan(tal);
-                    label1.Text = "Tan(" + textBox1.Text + ") " + "= " + tal.ToString("X");
+                    label1.Text = "Tan(" + textBox1.Text + ") " + "= " + ((int)Math.Round(tal)).ToString("X");
                     break;
                 default:
                     break;
             }
             textBox1.Text = "0";
-            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
         /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
         private void ButtonRoten_Click(object sender, EventArgs e)
@@ -238,7 +239,7 @@ namespace Calculator
             tal = Math.Sqrt(tal); //Uträkning
             label1.Text = "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste heltalet
             textBox1.Text = "0";
-            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
         /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
         private void ButtonRotenN_Click(object sender, EventArgs e)
@@ -250,7 +251,7 @@ namespace Calculator
 
             label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste hexadeciamal heltalet
             textBox1.Text = "0";
-            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
         /*Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen*/
         private void ButtonLn_Click(object sender, EventArgs e)
@@ -259,7 +260,7 @@ namespace Calculator
             tal = Math.Log(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X");//Ger svar i det närmaste hela hexadecimala talet
             textBox1.Text = "0";
-            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
         /*Metoden hämtar det inskriva talet och lägger det i 10 logarimen*/
         private void ButtonLog_Click(object sender, EventArgs e)
@@ -268,7 +269,7 @@ namespace Calculator
             tal = Math.Log10(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X");//Ger svar i det närmaste hela hexadecimala talet
             textBox1.Text = "0";
-            svar = tal.ToString(); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
         /*Varje gång label1 uppdateras läggs det till i historiken och skrivs ut i listboxen*/
         private void Uppdatering_historik(object sender, EventArgs e)

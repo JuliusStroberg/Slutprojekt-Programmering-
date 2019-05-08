@@ -420,14 +420,14 @@
             this.miniräknartypToolStripMenuItem.Name = "miniräknartypToolStripMenuItem";
             this.miniräknartypToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.miniräknartypToolStripMenuItem.Text = "Standard";
-            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.miniräknartypToolStripMenuItem_Click);
+            this.miniräknartypToolStripMenuItem.Click += new System.EventHandler(this.MiniräknartypToolStripMenuItem_Click);
             // 
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
             this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
-            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.utökadToolStripMenuItem_Click);
+            this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 
             // HexadecimalToolStripMenuItem
             // 
@@ -447,7 +447,7 @@
             this.typvärdeToolStripMenuItem.Name = "typvärdeToolStripMenuItem";
             this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.typvärdeToolStripMenuItem.Text = "Typvärde";
-            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.typvärdeToolStripMenuItem_Click);
+            this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.TypvärdeToolStripMenuItem_Click);
             // 
             // buttonClearHistory
             // 
@@ -476,6 +476,7 @@
             this.buttonCallEquation.TabIndex = 90;
             this.buttonCallEquation.Text = "Call equation";
             this.buttonCallEquation.UseVisualStyleBackColor = true;
+            this.buttonCallEquation.Click += new System.EventHandler(this.ButtonCallEquation_Click);
             // 
             // Form3
             // 
