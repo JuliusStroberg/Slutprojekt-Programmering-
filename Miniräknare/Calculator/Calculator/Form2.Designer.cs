@@ -614,8 +614,8 @@
             // typvärdeToolStripMenuItem
             // 
             this.typvärdeToolStripMenuItem.Name = "typvärdeToolStripMenuItem";
-            this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.typvärdeToolStripMenuItem.Text = "Typvärde";
+            this.typvärdeToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.typvärdeToolStripMenuItem.Text = "Lägesmått";
             this.typvärdeToolStripMenuItem.Click += new System.EventHandler(this.TypvärdeToolStripMenuItem_Click);
             // 
             // buttonClearHistory
