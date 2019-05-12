@@ -73,7 +73,7 @@
             // utökadToolStripMenuItem
             // 
             this.utökadToolStripMenuItem.Name = "utökadToolStripMenuItem";
-            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utökadToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.utökadToolStripMenuItem.Text = "Utökad";
             this.utökadToolStripMenuItem.Click += new System.EventHandler(this.UtökadToolStripMenuItem_Click);
             // 
@@ -156,6 +156,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Hämta Median";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.MedianVärde_Click);
             // 
             // button3
             // 
@@ -166,6 +167,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Hämta Medelvärde";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.MedelVärde_Click);
             // 
             // Typvärde_value
             // 

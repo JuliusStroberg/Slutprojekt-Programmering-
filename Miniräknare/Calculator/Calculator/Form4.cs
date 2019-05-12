@@ -13,6 +13,7 @@ namespace Calculator
     public partial class Form4 : Form
     {
         List<double> lista = new List<double>();
+        double sum = 0;
 
         public Form4()
         {
@@ -101,6 +102,54 @@ namespace Calculator
                          orderby nyLista.Count() descending //Den listan sorteras efter antalet tal per siffra med den siffra med flest tal först
                          select nyLista.Key).First(); //Det första talet väljs och blir typvärdet
             Typvärde_value.Text = värde.ToString();
+        }
+        /*Metoden sorterar listan i storleksordning genom bubblesort.
+         Bubblesort används eftersom listan som används inte kommer 
+         vara speciellt lång och tiden därmed inte kommer påverka.
+         Tagen från didigare uppgift*/
+        public static void Bubblesort(List<double> li, double length)
+        {
+            /*Går igenom alla tal i listan*/
+            for (double m = length - 1; m > 0; m--)
+            {
+                /*Går igenom alla tal som ska bytas*/
+                for (int n = 0; n < m; n++)
+                {
+                    /*Utför en swapmetod, som därmed byter plats på de två talen 
+                      som jämförs om det tidigare talet är större än det senare*/
+                    if (li[n] > li[n + 1])
+                    {
+
+                        double temp = li[n];
+                        li[n] = li[n + 1];
+                        li[n + 1] = temp;
+                    }
+                }
+            }
+        }
+        /*Trycker man på knappen för medianen räknar man ut medianen för listan*/
+        private void MedianVärde_Click(object sender, EventArgs e)
+        {
+            Bubblesort(lista, lista.Count); //Metoden Bubblesort anropas.
+
+            if (lista.Count % 2 == 0) //Är listan ett jämt antal körs satsen
+            {
+                double median = lista[lista.Count / 2] + lista[(lista.Count / 2) + 1]; //Medianen räknas ut som medelvärdet av de två mittersta talen
+                Median_value.Text = median.ToString();
+            }
+            else
+            {
+                Median_value.Text = (lista.Count / 2).ToString();
+            }
+        }
+
+        private void MedelVärde_Click(object sender, EventArgs e)
+        {
+            for(int i = 1; i <= lista.Count; i++)
+            {
+                 sum += lista[i];
+            }
+            Medel_value.Text = sum.ToString();
         }
     }
 }
