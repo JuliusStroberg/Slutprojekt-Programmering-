@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -17,7 +12,7 @@ namespace Calculator
         string svar;
         String operation = "";
         bool angivet_värde = false;
-        List<Historik> Historiken = new List<Historik>(); //Skapar en lista som håller all historik
+        List<Historik> Historiken = new List<Historik>(); 
 
         public Form1()
         {
@@ -54,29 +49,29 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktions som det tidigare*/
         private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form3
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); }; 
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktions som det tidigare*/
         private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form4
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
@@ -119,23 +114,22 @@ namespace Calculator
                         svar = (resultat + Double.Parse(textBox1.Text)).ToString();
                         ans = double.Parse(svar);
                         break;
-                    case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
+                    case "-": /*Samma funktion som innan*/
                         svar = (resultat - Double.Parse(textBox1.Text)).ToString();
                         ans = double.Parse(svar);
                         break;
-                    case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
+                    case "*": /*Samma funktion som innan*/
                         svar = (resultat * Double.Parse(textBox1.Text)).ToString();
                         ans = double.Parse(svar);
                         break;
-                    case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
+                    case "/": /*Samma funktion som innan*/
                         svar = (resultat / Double.Parse(textBox1.Text)).ToString();
                         ans = double.Parse(svar);
                         break;
                     default:
                         break;
                 }
-
-                /*Ekvationen skrivs ut överst*/
+                
                 label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
                 textBox1.Text = "0";
             }
@@ -153,7 +147,7 @@ namespace Calculator
         /*När man trycker på return försvinner den senaste skrivna siffran*/
         private void Buttonreturn_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length == 1) /*Om den bara finns en siffra i textrutan blir det en 0*/
+            if (textBox1.Text.Length == 1)
             {
                 textBox1.Text = "0";
             }
@@ -187,7 +181,6 @@ namespace Calculator
             {
                 tal = tal * a;
             }
-            /*Svaret skrivs ut*/
             label1.Text = textBox1.Text + "^" + n + " " + "=" + " " + tal;
             textBox1.Text = "0";
             ans = tal; //Svaret kan anropas genom knappen ans

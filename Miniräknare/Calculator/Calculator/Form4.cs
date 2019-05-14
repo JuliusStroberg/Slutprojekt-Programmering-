@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -37,42 +33,42 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktin som övre*/
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form1
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktin som övre*/
         private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form2
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); }; /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); }; 
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktin som övre*/
         private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form3
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
@@ -134,22 +130,22 @@ namespace Calculator
 
             if (lista.Count % 2 == 0) //Är listan ett jämt antal körs satsen
             {
-                double median = lista[lista.Count / 2] + lista[(lista.Count / 2) + 1]; //Medianen räknas ut som medelvärdet av de två mittersta talen
+                double median = lista[lista.Count / 2] + lista[(lista.Count / 2) + 1] / 2; //Medianen räknas ut som medelvärdet av de två mittersta talen
                 Median_value.Text = median.ToString();
             }
             else
             {
-                Median_value.Text = (lista.Count / 2).ToString();
+                Median_value.Text = lista[(lista.Count / 2)].ToString(); //Mittentalet letas upp och används
             }
         }
-
+        /*Trycker man på knappen för medelvärde räknas medelvärdet för listan ut*/
         private void MedelVärde_Click(object sender, EventArgs e)
         {
             for(int i = 1; i <= lista.Count; i++)
             {
-                 sum += lista[i];
+                 sum += lista[i-1]; //Varje tal i listan adderas ihop till en summa
             }
-            Medel_value.Text = sum.ToString();
+            Medel_value.Text = (sum / lista.Count).ToString(); //Summan divideras på antalet tal för att få fram medelvärdet. 
         }
     }
 }

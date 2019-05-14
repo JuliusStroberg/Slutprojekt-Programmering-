@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -17,7 +12,7 @@ namespace Calculator
         string svar;
         String operation = "";
         bool angivet_värde = false;
-        List<Historik> Historiken = new List<Historik>(); //Skapar en lista som håller all historik
+        List<Historik> Historiken = new List<Historik>();
 
         public Form2()
         {
@@ -29,7 +24,7 @@ namespace Calculator
             this.Width = 816;
             textBox1.Width = 258;
         }
-
+        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
         private void MiniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
@@ -42,43 +37,43 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-
+        /*Har samma funktion som den tidigare*/
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form1
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
-            /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
-            private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
+        /*Har samma funktion som den tidigare*/
+        private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form3
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
 
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktion som den tidigare*/
         private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form4
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
@@ -108,7 +103,7 @@ namespace Calculator
             operation = num.Text;
             resultat = Int32.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber); /*Det som stod i textrutan sparas och omvandlas för att användas i ekvationen*/
             label1.Text = System.Convert.ToString(textBox1.Text) + " " + operation;
-            textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
+            textBox1.Text = "";
         }
 
         /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
@@ -122,23 +117,22 @@ namespace Calculator
                         intvalue = resultat + Int32.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
                         svar = intvalue.ToString("X"); //Omvandlas till hexadecimal
                         break;
-                    case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
+                    case "-": 
                         intvalue = resultat - Int32.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
-                        svar = intvalue.ToString("X"); //Omvandlas till hexadecimal
+                        svar = intvalue.ToString("X"); 
                         break;
-                    case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
+                    case "*": 
                         intvalue = resultat * Int32.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
-                        svar = intvalue.ToString("X"); //Omvandlas till hexadecimal
+                        svar = intvalue.ToString("X"); 
                         break;
-                    case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
+                    case "/": 
                         intvalue = resultat - Int32.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
-                        svar = intvalue.ToString("X"); //Omvandlas till hexadecimal
+                        svar = intvalue.ToString("X"); 
                         break;
                     default:
                         break;
                 }
-
-                /*Ekvationen skrivs ut överst*/
+                
                 label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
                 textBox1.Text = "0";
             }

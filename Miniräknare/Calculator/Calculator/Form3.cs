@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -17,7 +12,7 @@ namespace Calculator
         string svar;
         String operation = "";
         bool angivet_värde = false;
-        List<Historik> Historiken = new List<Historik>(); //Skapar en lista som håller all historik
+        List<Historik> Historiken = new List<Historik>();
 
         public Form3()
         {
@@ -42,42 +37,42 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktion som övre*/
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form1
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktion som övre*/
         private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form2
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); }; /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); }; 
             frm.Show();
             this.Hide();
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /*Har samma funktion som övre*/
         private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
+            
             var frm = new Form4
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };  /*När det nya form stängs ned, öppnas den gamla igen*/
+            frm.FormClosing += delegate { this.Show(); };  
             frm.Show();
             this.Hide();
         }
@@ -123,8 +118,8 @@ namespace Calculator
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
             operation = num.Text;
             resultat = BinStringToInt(textBox1.Text); //Metoden BitStringToInt anropas för att omvandla från binärt till decimal
-            label1.Text = Convert.ToString(resultat, 2) + " " + operation; //Skriver ut talet i det binära talsystemet
-            textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
+            label1.Text = Convert.ToString(resultat, 2) + " " + operation; 
+            textBox1.Text = ""; 
         }
         /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
         private void ButonEnter_Click(object sender, EventArgs e)
@@ -138,23 +133,22 @@ namespace Calculator
                         intvalue = resultat + BinStringToInt(textBox1.Text);
                         svar = Convert.ToString(intvalue, 2);
                         break;
-                    case "-": /*Om det finns ett subtraktions tecken görs en subtraktion och svaret sparas i en variabel för senare användning*/
+                    case "-": 
                         intvalue = resultat - BinStringToInt(textBox1.Text);
                         svar = Convert.ToString(intvalue, 2);
                         break;
-                    case "*": /*Om det finns ett multiplikations tecken görs en multiplikation och svaret sparas i en variabel för senare användning*/
+                    case "*": 
                         intvalue = resultat * BinStringToInt(textBox1.Text);
                         svar = Convert.ToString(intvalue, 2);
                         break;
-                    case "/": /*Om det finns ett divisions tecken görs en division och svaret sparas i en variabel för senare användning*/
+                    case "/": 
                         intvalue = resultat - BinStringToInt(textBox1.Text);
                         svar = Convert.ToString(intvalue, 2);
                         break;
                     default:
                         break;
                 }
-
-                /*Ekvationen skrivs ut överst*/
+                
                 label1.Text = label1.Text + " " + textBox1.Text + " " + "=" + " " + svar;
                 textBox1.Text = "0";
             }
