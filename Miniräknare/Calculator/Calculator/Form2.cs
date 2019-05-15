@@ -9,7 +9,7 @@ namespace Calculator
     {
         int resultat = 0;
         int intvalue = 0;
-        string svar;
+        string svar; //Sparar det aktuella svaret för annvändning i ans
         String operation = "";
         bool angivet_värde = false;
         List<Historik> Historiken = new List<Historik>();
@@ -224,7 +224,7 @@ namespace Calculator
                     break;
             }
             textBox1.Text = "0";
-            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X");
         }
         /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
         private void ButtonRoten_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace Calculator
             tal = Math.Sqrt(tal); //Uträkning
             label1.Text = "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste heltalet
             textBox1.Text = "0";
-            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X");
         }
         /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
         private void ButtonRotenN_Click(object sender, EventArgs e)
@@ -245,7 +245,7 @@ namespace Calculator
 
             label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X"); //Ger svar i det närmaste hexadeciamal heltalet
             textBox1.Text = "0";
-            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X");
         }
         /*Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen*/
         private void ButtonLn_Click(object sender, EventArgs e)
@@ -263,7 +263,7 @@ namespace Calculator
             tal = Math.Log10(tal);
             label1.Text = "ln(" + textBox1.Text + ")" + " " + "=" + " " + ((int)Math.Round(tal)).ToString("X");//Ger svar i det närmaste hela hexadecimala talet
             textBox1.Text = "0";
-            svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
+            svar = ((int)Math.Round(tal)).ToString("X"); 
         }
         /*Varje gång label1 uppdateras läggs det till i historiken och skrivs ut i listboxen*/
         private void Uppdatering_historik(object sender, EventArgs e)

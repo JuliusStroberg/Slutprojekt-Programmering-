@@ -55,7 +55,6 @@
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonclear = new System.Windows.Forms.Button();
             this.buttonreturn = new System.Windows.Forms.Button();
-            this.buttonKomma = new System.Windows.Forms.Button();
             this.buttonAns = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -370,17 +369,6 @@
             this.buttonreturn.UseVisualStyleBackColor = true;
             this.buttonreturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
-            // buttonKomma
-            // 
-            this.buttonKomma.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKomma.Location = new System.Drawing.Point(247, 350);
-            this.buttonKomma.Name = "buttonKomma";
-            this.buttonKomma.Size = new System.Drawing.Size(60, 60);
-            this.buttonKomma.TabIndex = 52;
-            this.buttonKomma.Text = ",";
-            this.buttonKomma.UseVisualStyleBackColor = true;
-            this.buttonKomma.Click += new System.EventHandler(this.Button_Click);
-            // 
             // buttonAns
             // 
             this.buttonAns.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -690,7 +678,6 @@
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.buttonclear);
             this.Controls.Add(this.buttonreturn);
-            this.Controls.Add(this.buttonKomma);
             this.Controls.Add(this.buttonAns);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.button9);
@@ -744,7 +731,6 @@
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonclear;
         private System.Windows.Forms.Button buttonreturn;
-        private System.Windows.Forms.Button buttonKomma;
         private System.Windows.Forms.Button buttonAns;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button button9;

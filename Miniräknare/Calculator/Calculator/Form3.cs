@@ -9,7 +9,7 @@ namespace Calculator
     {
         int resultat = 0;
         int intvalue = 0;
-        string svar;
+        string svar; //Sparar det aktuella svaret i ans
         String operation = "";
         bool angivet_värde = false;
         List<Historik> Historiken = new List<Historik>();
@@ -240,7 +240,7 @@ namespace Calculator
                     break;
             }
             textBox1.Text = "0";
-            svar = Convert.ToString(((int)Math.Round(tal)), 2); //Svaret kan anropas genom knappen ans
+            svar = Convert.ToString(((int)Math.Round(tal)), 2);
         }
         /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
         /*Svaret avrundas ned till närmaste heltal*/
@@ -250,7 +250,7 @@ namespace Calculator
             tal = Math.Sqrt(tal); //Uträkning
             label1.Text = "√" + textBox1.Text + " " + "=" + " " + Convert.ToString(((int)Math.Round(tal)), 2); //Ger svar i det närmaste heltalet
             textBox1.Text = "0";
-            svar = Convert.ToString(((int)Math.Round(tal)), 2); //Svaret kan anropas genom knappen ans
+            svar = Convert.ToString(((int)Math.Round(tal)), 2); 
         }
         /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
         /*Svaret avrundas ned till närmaste heltal*/
@@ -263,7 +263,7 @@ namespace Calculator
 
             label1.Text = n + "√" + textBox1.Text + " " + "=" + " " + Convert.ToString(((int)Math.Round(tal)), 2); //Ger svar i det närmaste hexadeciamal heltalet
             textBox1.Text = "0";
-            svar = Convert.ToString(((int)Math.Round(tal)), 2); //Svaret kan anropas genom knappen ans
+            svar = Convert.ToString(((int)Math.Round(tal)), 2); 
         }
         /*Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen*/
         private void ButtonLn_Click(object sender, EventArgs e)
@@ -291,19 +291,18 @@ namespace Calculator
             {
                 Historiken.Add(new Historik(label1.Text));
                 ListboxHistorik.Items.Clear(); //Listboxen töms för att inte nya historiken ska skrivas ovanför den gamla
-                                               /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
+                /*For loppen går igenom listan med historik bakvänt och lägger till elementen i Listbox som visas på skärmen*/
                 for (int i = Historiken.Count; i > 0; i--)
                 {
                     ListboxHistorik.Items.Add(i + "." + "   " + Historiken[i - 1].Ekvation); // I fungerar som ett indexnummer
                 }
             }
         }
-        /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
+        /*Metoden rensar historiken*/
         private void ButtonClearHistory_Click(object sender, EventArgs e)
         {
-            int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.
-            label1.Text = Historiken[n - 1].Ekvation;
-            textBox1.Text = Historiken[n - 1].Ekvation.Split('=').Last(); // När ekvationen hämtas lägger sig svaret ut ekvationen i skrivrutan.
+            ListboxHistorik.Items.Clear();
+            Historiken.Clear();
         }
         /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
         private void ButtonCallEquation_Click(object sender, EventArgs e)
