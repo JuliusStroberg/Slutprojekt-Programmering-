@@ -508,7 +508,7 @@
             this.Controls.Add(this.button0);
             this.Controls.Add(this.button1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "+";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

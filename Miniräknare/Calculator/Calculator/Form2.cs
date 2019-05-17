@@ -188,14 +188,14 @@ namespace Calculator
             textBox1.Text = "0";
             svar = tal.ToString(); //Svaret kan anropas genom knappen ans
         }
-        /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
+        /*Knappen pi har ett värde på 3 eftersom det är det närmaste heltalet från 3.14*/
         private void ButtonPi_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "0")
             {
                 textBox1.Text = "";
             }
-            textBox1.Text = textBox1.Text + Math.PI.ToString("X");
+            textBox1.Text = textBox1.Text + 3.ToString("X");
         }
         /*Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens*/
         /*Svaret avrundas ned till närmaste heltal*/

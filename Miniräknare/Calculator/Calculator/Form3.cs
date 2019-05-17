@@ -204,7 +204,7 @@ namespace Calculator
             textBox1.Text = "0";
             svar = Convert.ToString(tal, 2); //Svaret kan anropas genom knappen ans
         }
-        /*Knappen pi har ett värde på 3.1415... och används som en vanlig siffra*/
+        /*Knappen pi har ett värde på 3 eftersom det är det närmaste heltalet. Fungerar som en vanlig siffra*/
         private void ButtonPi_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "0")
