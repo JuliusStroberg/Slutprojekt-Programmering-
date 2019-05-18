@@ -77,6 +77,11 @@ namespace Calculator
             this.Hide();
         }
         /*När metoden körs omvandlas en binär string till en int*/
+        /*Anledning till av den här algoritmen är eftersom den är 
+         lätt att förstå. Det är inget för komplicerat vilket 
+         gör att man kan förstå tanken bakom den. Eftersom talen 
+         inte är stora och att tiden inte spelar så stor roll funkar 
+         den här algoritmen utmärkt för sitt ändamål*/
         public static int BinStringToInt(string bits)
         {
             var reversedBits = bits.Reverse().ToArray(); //En array av alla tal skapas och skrivs i omvänd ordning
@@ -103,8 +108,8 @@ namespace Calculator
                     textBox1.Text = "";
 
             angivet_värde = false;
-
-            if (num.Text == ".") /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
+            /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
+            if (num.Text == ".")
             {
                 if (!textBox1.Text.Contains("."))
                     textBox1.Text = textBox1.Text + num.Text;
@@ -183,7 +188,7 @@ namespace Calculator
         /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
         private void ButtonKvadrat2_Click(object sender, EventArgs e)
         {
-            int tal = BinStringToInt(textBox1.Text) * BinStringToInt(textBox1.Text); // Metod för omvandling från binär till decimal anropas och körs i kvadrat
+            int tal = BinStringToInt(textBox1.Text) * BinStringToInt(textBox1.Text); 
             label1.Text = textBox1.Text + "^" + 2 + " " + "=" + " " + Convert.ToString(tal, 2);
             textBox1.Text = "0";
             svar = Convert.ToString(tal, 2);
@@ -191,7 +196,7 @@ namespace Calculator
         /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
         private void ButtonKvadratN_Click(object sender, EventArgs e)
         {
-            int a = BinStringToInt(textBox1.Text); // Metod för omvandling från binär till decimal anropas
+            int a = BinStringToInt(textBox1.Text);
             decimal n = numericUpDown1.Value; //Talet n tas från värdet man kan välja bredvid knappen
             int tal = a;
             /*Talet a multipliceras med sig självt n antal gånger i en loop*/
