@@ -81,14 +81,14 @@ namespace Calculator
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
             /*Om det står 0 i textboxen försvinnertalet om det man skriver in inte är .*/
             if ((textBox1.Text == "0") || (angivet_värde))
-                if (num.Text != ".")
+                if (num.Text != ",")
                     textBox1.Text = "";
 
             angivet_värde = false;
 
-            if (num.Text == ".") /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
+            if (num.Text == ",") /*Trycker man på knappen för . kollas det om det redan finns i talet. Gör det det så skrivs inget ut. Annars gör det det.*/
             {
-                if (!textBox1.Text.Contains("."))
+                if (!textBox1.Text.Contains(","))
                     textBox1.Text = textBox1.Text + num.Text;
             }
             else
@@ -97,11 +97,11 @@ namespace Calculator
         /*När knapparna + - * eller / trycks på skörs metoden*/
         private void Aritmetisk_operation(object sender, EventArgs e)
         {
-            Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
-            operation = num.Text;
-            resultat = Double.Parse(textBox1.Text); /*Det som stod i textrutan sparas för att användas i ekvationen*/
-            textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
-            label1.Text = System.Convert.ToString(resultat) + " " + operation;
+                Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
+                operation = num.Text;
+                resultat = Double.Parse(textBox1.Text); /*Det som stod i textrutan sparas för att användas i ekvationen*/
+                textBox1.Text = ""; /*Över textrutan visas det tidigare talet med operationen.*/
+                label1.Text = System.Convert.ToString(resultat) + " " + operation;
         }
         /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
         private void ButtonEnter_Click(object sender, EventArgs e)

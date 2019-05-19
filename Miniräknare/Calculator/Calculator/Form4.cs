@@ -74,14 +74,22 @@ namespace Calculator
         }
         /*När Add knappen trycks på läggs talet in i en lista*/
         private void Add_Click(object sender, EventArgs e)
-        {
-            lista.Add(double.Parse(input.Text));
-            input.Clear();
-            listBox1.Items.Clear();
-            for (int i = lista.Count; i > 0; i--)
+        {   /*Det man lägger till måste vara någonting, annars händer ingenting*/
+            if(input.Text == "")
             {
-                listBox1.Items.Add(i + "." + "   " + lista.ElementAt(i-1)); // I fungerar som ett indexnummer
+
             }
+            else
+            {
+                lista.Add(double.Parse(input.Text));
+                input.Clear();
+                listBox1.Items.Clear();
+                for (int i = lista.Count; i > 0; i--)
+                {
+                    listBox1.Items.Add(i + "." + "   " + lista.ElementAt(i - 1)); // I fungerar som ett indexnummer
+                }
+            }
+               
         }
 
         private void ClearList_Click(object sender, EventArgs e)
