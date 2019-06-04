@@ -24,7 +24,11 @@ namespace Calculator
             this.Width = 816;
             textBox1.Width = 258;
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MiniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
@@ -37,7 +41,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*Har samma funktion som den tidigare*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -50,7 +58,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*Har samma funktion som den tidigare*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -64,7 +76,11 @@ namespace Calculator
             this.Hide();
         }
 
-        /*Har samma funktion som den tidigare*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TypvärdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -77,7 +93,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När knapparna från 0-9 eller pi trycks på skörs metoden*/
+        /// <summary>
+        /// När knapparna från 0-9 eller pi trycks på skörs metoden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, EventArgs e)
         {
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas. */
@@ -96,7 +116,11 @@ namespace Calculator
             else
                 textBox1.Text = textBox1.Text + num.Text;
         }
-        /*När knapparna + - * eller / trycks på skörs metoden*/
+        /// <summary>
+        /// När knapparna + - * eller / trycks på skörs metoden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Aritmetisk_operation(object sender, EventArgs e)
         {
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
@@ -105,8 +129,11 @@ namespace Calculator
             label1.Text = System.Convert.ToString(textBox1.Text) + " " + operation;
             textBox1.Text = "";
         }
-
-        /*Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen*/
+        /// <summary>
+        /// Trycker man på enter räknas den ekvation man valt ut. Exempelvis om man valt addition räknas det ut och visas på skärmen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonEnter_Click(object sender, EventArgs e)
         {  /*Skriver användaren inte in det andra värdet körs inte operationen*/
             if (textBox1.Text != "")
@@ -139,14 +166,22 @@ namespace Calculator
             else
                 label1.Text = "";
         }
-        /*När man trycker på clear nollställs allt*/
+        /// <summary>
+        /// När man trycker på clear nollställs allt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClear_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
             resultat = 0;
             label1.Text = "";
         }
-        /*När man trycker på return försvinner den senaste skrivna siffran*/
+        /// <summary>
+        /// När man trycker på return försvinner den senaste skrivna siffran
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonReturn_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length == 1) /*Om den bara finns en siffra i textrutan blir det en 0*/
@@ -159,12 +194,20 @@ namespace Calculator
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
         }
-        /*Svaret man fick från förra ekvationen anropas och används*/
+        /// <summary>
+        /// Svaret man fick från förra ekvationen anropas och används
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAns_Click(object sender, EventArgs e)
         {
             textBox1.Text = svar;
         }
-         /*När man trycker på knappen för i kvadrat multipliceras talet med sig själv*/
+        /// <summary>
+        /// När man trycker på knappen för i kvadrat multipliceras talet med sig själv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonKvadrat2_Click(object sender, EventArgs e)
         {
             int tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber) * int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -172,7 +215,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = tal.ToString();
         }
-        /*När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger*/
+        /// <summary>
+        /// När man trycker på knappen för a^n multipliceras talet med sig självt n antal gånger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonKvadratN_Click(object sender, EventArgs e)
         {
             int a = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -188,7 +235,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = tal.ToString(); //Svaret kan anropas genom knappen ans
         }
-        /*Knappen pi har ett värde på 3 eftersom det är det närmaste heltalet från 3.14*/
+        /// <summary>
+        /// Knappen pi har ett värde på 3 eftersom det är det närmaste heltalet från 3.14
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPi_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "0")
@@ -197,8 +248,11 @@ namespace Calculator
             }
             textBox1.Text = textBox1.Text + 3.ToString("X");
         }
-        /*Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens*/
-        /*Svaret avrundas ned till närmaste heltal*/
+        /// <summary>
+        /// Metoden använder det inskrivna talet, omvandlar det till radius och beroende på nedtryckt knapp sätter in det i sinus, cosinus eller tangens. Svaret avrundas ned till närmaste heltal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SinCosTan_Click(object sender, EventArgs e)
         {
             Button num = (Button)sender; /*Den knappen som tryckts ned avläses för att rätt knapp ska användas.*/
@@ -226,7 +280,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = ((int)Math.Round(tal)).ToString("X");
         }
-        /*Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen*/
+        /// <summary>
+        /// Metoden kör roten ur det inskrivna talet och skriver sedan ut svaret på skärmen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRoten_Click(object sender, EventArgs e)
         {
             double tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -235,7 +293,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = ((int)Math.Round(tal)).ToString("X");
         }
-        /*Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret*/
+        /// <summary>
+        /// Metoden räknar ut n√ av det inskrivna talet och skrver ut svaret
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRotenN_Click(object sender, EventArgs e)
         {
             double a = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -247,7 +309,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = ((int)Math.Round(tal)).ToString("X");
         }
-        /*Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen*/
+        /// <summary>
+        /// Metoden hämtar det inskrivna talet och lägger det i den naturliga logaritmen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonLn_Click(object sender, EventArgs e)
         {
             double tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -256,7 +322,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = ((int)Math.Round(tal)).ToString("X"); //Svaret kan anropas genom knappen ans
         }
-        /*Metoden hämtar det inskriva talet och lägger det i 10 logarimen*/
+        /// <summary>
+        /// Metoden hämtar det inskriva talet och lägger det i 10 logarimen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonLog_Click(object sender, EventArgs e)
         {
             double tal = int.Parse(textBox1.Text, System.Globalization.NumberStyles.HexNumber);
@@ -265,7 +335,11 @@ namespace Calculator
             textBox1.Text = "0";
             svar = ((int)Math.Round(tal)).ToString("X"); 
         }
-        /*Varje gång label1 uppdateras läggs det till i historiken och skrivs ut i listboxen*/
+        /// <summary>
+        /// Varje gång label1 uppdateras läggs det till i historiken och skrivs ut i listboxen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Uppdatering_historik(object sender, EventArgs e)
         { /*if satsen säger att om label1 innehåller ett = tecken körs satsen*/
             if (label1.Text.Contains("="))
@@ -279,13 +353,21 @@ namespace Calculator
                 }
             }
         }
-        /*Trycker man på knappen för Clear History rensas historiken*/
+        /// <summary>
+        /// Trycker man på knappen för Clear History rensas historiken
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClearHistorik_Click(object sender, EventArgs e)
         {
             ListboxHistorik.Items.Clear();
             Historiken.Clear();
         }
-        /*Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen*/
+        /// <summary>
+        /// Metoden anropar en av ekvatioenerna i hisstoriken genom att man anger numret som visas framför ekvationen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCallEquation_Click(object sender, EventArgs e)
         {
             int n = decimal.ToInt32(numericUpDown3.Value); //Talet n tas från värdet man kan välja bredvid knappen.

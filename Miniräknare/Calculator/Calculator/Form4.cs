@@ -20,7 +20,11 @@ namespace Calculator
         {
             this.Width = 816;
         }
-        /*När meny alternativet klickas öppnas ett nytt form och den gamla tas ned*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MiniräknartypToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*Den nya form får samma position som den tidigare och en startposition som anges manuellt av datorn*/
@@ -33,7 +37,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*Har samma funktin som övre*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UtökadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -46,7 +54,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*Har samma funktin som övre*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -59,7 +71,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*Har samma funktin som övre*/
+        /// <summary>
+        /// När meny alternativet klickas öppnas ett nytt form och den gamla tas ned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BinärToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -72,7 +88,11 @@ namespace Calculator
             frm.Show();
             this.Hide();
         }
-        /*När Add knappen trycks på läggs talet in i en lista*/
+        /// <summary>
+        /// När Add knappen trycks på läggs talet in i en lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, EventArgs e)
         {   /*Det man lägger till måste vara någonting, annars händer ingenting*/
             if(input.Text == "")
@@ -91,14 +111,21 @@ namespace Calculator
             }
                
         }
-
+        /// <summary>
+        /// Metoden rensar listan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearList_Click(object sender, EventArgs e)
         {
             lista.Clear();
             listBox1.Items.Clear();
         }
-        /*När man trycker på knappen för typvärde grupperas listan efter tal och sedan antalet av samma nummer.
-          Det nummer med flest antal blir typvärdet*/
+        /// <summary>
+        /// När man trycker på knappen för typvärde grupperas listan efter tal och sedan antalet av samma nummer.Det nummer med flest antal blir typvärdet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Typvärde_Click(object sender, EventArgs e)
         {
             double värde = (from värden in lista //Varje nummer i listan 
@@ -107,10 +134,14 @@ namespace Calculator
                          select nyLista.Key).First(); //Det första talet väljs och blir typvärdet
             Typvärde_value.Text = värde.ToString();
         }
-        /*Metoden sorterar listan i storleksordning genom bubblesort.
-         Bubblesort används eftersom listan som används inte kommer 
-         vara speciellt lång och tiden därmed inte kommer påverka.
-         Tagen från didigare uppgift*/
+        /*Bubblesort används eftersom listan som används inte kommer 
+        vara speciellt lång och tiden därmed inte kommer påverka.
+        Tagen från didigare uppgift*/
+        /// <summary>
+        /// Metoden sorterar listan i storleksordning genom bubblesort.
+        /// </summary>
+        /// <param name="li"></param>
+        /// <param name="length"></param>
         public static void Bubblesort(List<double> li, double length)
         {
             /*Går igenom alla tal i listan*/
@@ -131,7 +162,11 @@ namespace Calculator
                 }
             }
         }
-        /*Trycker man på knappen för medianen räknar man ut medianen för listan*/
+        /// <summary>
+        /// Trycker man på knappen för medianen räknar man ut medianen för listan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MedianVärde_Click(object sender, EventArgs e)
         {
             Bubblesort(lista, lista.Count); //Metoden Bubblesort anropas.
@@ -146,7 +181,11 @@ namespace Calculator
                 Median_value.Text = lista[(lista.Count / 2)].ToString(); //Mittentalet letas upp och används
             }
         }
-        /*Trycker man på knappen för medelvärde räknas medelvärdet för listan ut*/
+        /// <summary>
+        /// Trycker man på knappen för medelvärde räknas medelvärdet för listan ut
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MedelVärde_Click(object sender, EventArgs e)
         {
             for(int i = 1; i <= lista.Count; i++)
